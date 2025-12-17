@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Solo Wear - Premium Luxury T-Shirts</title>
+    <meta name="description" content="Review your selected premium T-shirts. Adjust quantities, calculate totals, and proceed to secure checkout for your luxury purchase.">
+    <meta name="keywords" content="shopping cart, luxury t-shirts, premium clothing cart, checkout, order summary">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👕</text></svg>">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>Solo<span>Wear</span></h1>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="cart.html" class="active cart-link">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">0</span>
+                        </a></li>
+                        <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i></a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Shopping Cart</h1>
+            <p>Review your premium selections</p>
+        </div>
+    </section>
+
+    <!-- Cart Content -->
+    <section class="cart-section section-padding">
+        <div class="container">
+            <div class="cart-layout">
+                <!-- Cart Items -->
+                <div class="cart-items-container">
+                    <div class="cart-header">
+                        <h2>Your Items</h2>
+                        <span id="itemCount">0 items</span>
+                    </div>
+                    
+                    <div class="cart-items" id="cartItems">
+                        <!-- Cart items will be loaded via JavaScript -->
+                        <div class="empty-cart" id="emptyCart">
+                            <i class="fas fa-shopping-bag"></i>
+                            <h3>Your cart is empty</h3>
+                            <p>Add premium essentials to experience luxury everyday wear</p>
+                            <a href="shop.html" class="btn btn-gold">Start Shopping</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <aside class="order-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span id="shipping">FREE</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax</span>
+                            <span id="tax">$0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="total">$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="shipping-info">
+                        <i class="fas fa-shipping-fast"></i>
+                        <div>
+                            <h4>Free Express Shipping</h4>
+                            <p>All orders ship free via 2-3 day delivery</p>
+                        </div>
+                    </div>
+                    
+                    <div class="secure-checkout">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <h4>Secure Checkout</h4>
+                            <p>Your payment information is protected</p>
+                        </div>
+                    </div>
+                    
+                    <a href="checkout.html" class="btn btn-gold btn-full" id="checkoutBtn">Proceed to Checkout</a>
+                    <a href="shop.html" class="btn btn-outline btn-full">Continue Shopping</a>
+                    
+                    <div class="payment-methods">
+                        <p>We Accept:</p>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fas fa-mobile-alt" title="EasyPaisa"></i>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Recently Viewed -->
+            <div class="recently-viewed">
+                <h2>Recently Viewed</h2>
+                <div class="products-grid" id="recentlyViewed">
+                    <!-- Recently viewed products will be loaded via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <h2>Solo<span>Wear</span></h2>
+                    </div>
+                    <p class="footer-description">Redefining luxury in everyday essentials through exceptional craftsmanship and sustainable practices.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Shop All</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> support@solo-wear.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Luxury Avenue, Fashion District</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Solo Wear. All rights reserved. | Premium Luxury Clothing</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+            loadCartItems();
+            updateOrderSummary();
+        });
+    </script>
+</body>
+</html>
