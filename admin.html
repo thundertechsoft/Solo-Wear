@@ -3,302 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard | Solo Wear</title>
-    <meta name="description" content="Solo Wear Admin Dashboard - Manage products, inventory, and orders for the premium luxury clothing brand.">
-    <meta name="robots" content="noindex, nofollow">
-    <link rel="stylesheet" href="style.css">
+    <title>Solo Wear | Premium Pakistani Fashion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👕</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>">
 </head>
 <body>
-    <!-- Login Overlay -->
-    <div class="admin-login-overlay" id="loginOverlay">
-        <div class="login-container">
-            <div class="login-header">
+    <!-- Header/Navigation -->
+    <header class="luxury-header">
+        <div class="container">
+            <nav class="navbar">
                 <div class="logo">
-                    <h1>Solo<span>Wear</span></h1>
+                    <h1><span class="gold-text">SOLO</span> WEAR</h1>
+                    <div class="gold-bar"></div>
                 </div>
-                <h2>Admin Access</h2>
-                <p>Enter PIN to access the dashboard</p>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="cart.html" class="cart-icon">Cart <span id="cart-count">0</span></a></li>
+                    <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="cinematic-hero">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
+            <h2 class="hero-title">ELEGANCE <span class="gold-text">REDEFINED</span></h2>
+            <p class="hero-subtitle">Premium Pakistani Fashion for the Discerning Individual</p>
+            <a href="shop.html" class="cta-button">EXPLORE COLLECTION</a>
+        </div>
+        <div class="hero-overlay"></div>
+        <video autoplay muted loop class="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-fashion-model-in-a-modern-studio-39827-large.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <!-- Featured Collection -->
+    <section class="featured-collection">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">FEATURED <span class="gold-text">COLLECTION</span></h2>
+                <p class="section-subtitle">Exquisite pieces crafted with precision and luxury in mind</p>
+                <div class="gold-bar-center"></div>
             </div>
-            <div class="login-form">
-                <div class="form-group">
-                    <input type="password" id="adminPin" placeholder="Enter 4-digit PIN" maxlength="4">
-                    <div class="pin-display" id="pinDisplay">●●●●</div>
+            
+            <div class="collection-grid">
+                <div class="collection-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="collection-img">
+                        <div class="img-placeholder luxury-1"></div>
+                    </div>
+                    <div class="collection-info">
+                        <h3>Royal Kurta</h3>
+                        <p class="price">PKR 12,999</p>
+                        <a href="product-detail.html?id=1" class="view-btn">View Details</a>
+                    </div>
                 </div>
-                <div class="pin-pad">
-                    <button type="button" class="pin-btn" data-number="1">1</button>
-                    <button type="button" class="pin-btn" data-number="2">2</button>
-                    <button type="button" class="pin-btn" data-number="3">3</button>
-                    <button type="button" class="pin-btn" data-number="4">4</button>
-                    <button type="button" class="pin-btn" data-number="5">5</button>
-                    <button type="button" class="pin-btn" data-number="6">6</button>
-                    <button type="button" class="pin-btn" data-number="7">7</button>
-                    <button type="button" class="pin-btn" data-number="8">8</button>
-                    <button type="button" class="pin-btn" data-number="9">9</button>
-                    <button type="button" class="pin-btn clear" id="clearPin">C</button>
-                    <button type="button" class="pin-btn" data-number="0">0</button>
-                    <button type="button" class="pin-btn delete" id="deletePin"><i class="fas fa-backspace"></i></button>
+                
+                <div class="collection-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="collection-img">
+                        <div class="img-placeholder luxury-2"></div>
+                    </div>
+                    <div class="collection-info">
+                        <h3>Silk Embroidered Shawl</h3>
+                        <p class="price">PKR 8,499</p>
+                        <a href="product-detail.html?id=2" class="view-btn">View Details</a>
+                    </div>
                 </div>
-                <button type="button" class="btn btn-gold" id="submitPin">Access Dashboard</button>
-                <div class="login-message" id="loginMessage"></div>
-            </div>
-            <div class="login-note">
-                <p><i class="fas fa-info-circle"></i> Default PIN: 1234</p>
+                
+                <div class="collection-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="collection-img">
+                        <div class="img-placeholder luxury-3"></div>
+                    </div>
+                    <div class="collection-info">
+                        <h3>Designer Sherwani</h3>
+                        <p class="price">PKR 24,999</p>
+                        <a href="product-detail.html?id=3" class="view-btn">View Details</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Admin Dashboard (Hidden until login) -->
-    <div class="admin-dashboard" id="adminDashboard" style="display: none;">
-        <!-- Admin Header -->
-        <header class="admin-header">
-            <div class="container">
-                <div class="admin-header-content">
-                    <div class="admin-logo">
-                        <h1>Solo<span>Wear</span> <span class="admin-badge">Admin</span></h1>
+    <!-- Luxury Features -->
+    <section class="luxury-features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-right">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
                     </div>
-                    <nav class="admin-nav">
-                        <ul>
-                            <li><a href="index.html" class="back-to-site"><i class="fas fa-globe"></i> View Site</a></li>
-                            <li><a href="#" class="admin-logout" id="adminLogout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-                        </ul>
-                    </nav>
+                    <h3>Premium Quality</h3>
+                    <p>Only the finest fabrics and materials selected for our collections.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Free Delivery</h3>
+                    <p>Complimentary delivery across Pakistan on orders above PKR 10,000.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-left">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Payment</h3>
+                    <p>Your transactions are protected with our advanced security systems.</p>
                 </div>
             </div>
-        </header>
+        </div>
+    </section>
 
-        <!-- Admin Main Content -->
-        <main class="admin-main">
-            <div class="container">
-                <!-- Dashboard Overview -->
-                <section class="admin-overview">
-                    <h2>Dashboard Overview</h2>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-tshirt"></i>
-                            </div>
-                            <div class="stat-content">
-                                <h3 id="totalProducts">0</h3>
-                                <p>Total Products</p>
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </div>
-                            <div class="stat-content">
-                                <h3 id="totalOrders">0</h3>
-                                <p>Total Orders</p>
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="stat-content">
-                                <h3 id="newsletterSubs">0</h3>
-                                <p>Newsletter Subs</p>
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-dollar-sign"></i>
-                            </div>
-                            <div class="stat-content">
-                                <h3 id="totalRevenue">$0</h3>
-                                <p>Total Revenue</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Product Management -->
-                <section class="product-management">
-                    <div class="section-header">
-                        <h2>Product Management</h2>
-                        <p>Add, edit, or remove products from your store</p>
-                    </div>
-                    
-                    <!-- Add Product Form -->
-                    <div class="add-product-form">
-                        <h3>Add New Product</h3>
-                        <form id="addProductForm">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="productName">Product Name *</label>
-                                    <input type="text" id="productName" required placeholder="Premium Classic T-Shirt">
-                                </div>
-                                <div class="form-group">
-                                    <label for="productPrice">Price *</label>
-                                    <input type="number" id="productPrice" min="0" step="0.01" required placeholder="49.99">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="productImage">Image URL *</label>
-                                <input type="url" id="productImage" required placeholder="https://example.com/image.jpg">
-                                <small class="form-note">Enter a direct image URL. For demo, you can use placeholder images from <a href="https://picsum.photos" target="_blank">picsum.photos</a></small>
-                                <div class="image-preview" id="imagePreview">
-                                    <p>Image preview will appear here</p>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="productCategory">Category *</label>
-                                <select id="productCategory" required>
-                                    <option value="">Select Category</option>
-                                    <option value="classic">Classic Collection</option>
-                                    <option value="premium">Premium Line</option>
-                                    <option value="limited">Limited Edition</option>
-                                    <option value="v-neck">V-Neck</option>
-                                    <option value="crew-neck">Crew Neck</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="productDescription">Description *</label>
-                                <textarea id="productDescription" rows="4" required placeholder="Describe the product features, materials, and benefits..."></textarea>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="productSizes">Available Sizes</label>
-                                <div class="size-options">
-                                    <label class="size-option">
-                                        <input type="checkbox" name="size" value="S" checked>
-                                        <span>S</span>
-                                    </label>
-                                    <label class="size-option">
-                                        <input type="checkbox" name="size" value="M" checked>
-                                        <span>M</span>
-                                    </label>
-                                    <label class="size-option">
-                                        <input type="checkbox" name="size" value="L" checked>
-                                        <span>L</span>
-                                    </label>
-                                    <label class="size-option">
-                                        <input type="checkbox" name="size" value="XL" checked>
-                                        <span>XL</span>
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="productStock">Stock Quantity *</label>
-                                <input type="number" id="productStock" min="0" required value="50">
-                            </div>
-                            
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-gold">
-                                    <i class="fas fa-plus"></i> Add Product
-                                </button>
-                                <button type="reset" class="btn btn-outline">Clear Form</button>
-                            </div>
-                            <div class="form-message" id="productFormMessage"></div>
-                        </form>
-                    </div>
-
-                    <!-- Existing Products -->
-                    <div class="existing-products">
-                        <h3>Existing Products</h3>
-                        <div class="products-table-container">
-                            <table class="products-table" id="productsTable">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Image</th>
-                                        <th>Name</th>
-                                        <th>Category</th>
-                                        <th>Price</th>
-                                        <th>Stock</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="productsTableBody">
-                                    <!-- Products will be loaded via JavaScript -->
-                                </tbody>
-                            </table>
-                            <div class="no-products" id="noProductsAdmin">
-                                <p>No products added yet. Add your first product using the form above.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Recent Orders -->
-                <section class="recent-orders">
-                    <div class="section-header">
-                        <h2>Recent Orders</h2>
-                        <p>Monitor and manage customer orders</p>
-                    </div>
-                    <div class="orders-table-container">
-                        <table class="orders-table">
-                            <thead>
-                                <tr>
-                                    <th>Order ID</th>
-                                    <th>Customer</th>
-                                    <th>Date</th>
-                                    <th>Amount</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="ordersTableBody">
-                                <tr>
-                                    <td colspan="6" class="no-data">
-                                        <p>No orders placed yet. Orders will appear here when customers complete purchases.</p>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <!-- Settings -->
-                <section class="admin-settings">
-                    <h2>Store Settings</h2>
-                    <div class="settings-grid">
-                        <div class="setting-card">
-                            <h3><i class="fas fa-key"></i> Change Admin PIN</h3>
-                            <div class="form-group">
-                                <input type="password" id="newPin" placeholder="New 4-digit PIN" maxlength="4">
-                            </div>
-                            <button class="btn btn-small" id="changePin">Update PIN</button>
-                        </div>
-                        <div class="setting-card">
-                            <h3><i class="fas fa-database"></i> Data Management</h3>
-                            <div class="setting-actions">
-                                <button class="btn btn-small" id="exportData">Export Data</button>
-                                <button class="btn btn-small btn-outline" id="resetData">Reset All Data</button>
-                            </div>
-                            <p class="setting-note">Reset will clear all products, cart, and orders (except admin settings)</p>
-                        </div>
-                        <div class="setting-card">
-                            <h3><i class="fas fa-info-circle"></i> Store Information</h3>
-                            <p><strong>EasyPaisa Number:</strong> 0300-XXXXXXX</p>
-                            <p><strong>Contact Email:</strong> support@solo-wear.com</p>
-                            <p><strong>Store Status:</strong> <span class="status-active">Active</span></p>
-                        </div>
-                    </div>
-                </section>
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><span class="gold-text">SOLO</span> WEAR</h2>
+                    <p>Redefining Pakistani Fashion with Luxury & Elegance</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="cart.html">Your Cart</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-phone gold-text"></i> +92 312 1399449</p>
+                    <p><i class="fas fa-envelope gold-text"></i> info@solowear.pk</p>
+                    <p><i class="fas fa-map-marker-alt gold-text"></i> karachi, Pakistan</p>
+                </div>
             </div>
-        </main>
-
-        <!-- Admin Footer -->
-        <footer class="admin-footer">
-            <div class="container">
-                <p>Solo Wear Admin Dashboard v1.0 | Local Storage Database | Last Updated: <span id="currentDate"></span></p>
-                <p class="footer-note">This is a frontend-only admin panel. All data is stored in browser localStorage.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Solo Wear. All rights reserved. | Premium Pakistani Fashion Brand</p>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923121399449" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <span class="pulse-ring"></span>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="script.js"></script>
     <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Update cart count on page load
         document.addEventListener('DOMContentLoaded', function() {
-            initAdminPanel();
+            updateCartCount();
         });
     </script>
 </body>
