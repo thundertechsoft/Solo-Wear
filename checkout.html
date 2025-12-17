@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout | Solo Wear - Premium Luxury T-Shirts</title>
+    <meta name="description" content="Complete your luxury purchase securely. Multiple payment options including EasyPaisa. Fast shipping and premium packaging included.">
+    <meta name="keywords" content="checkout, secure payment, luxury purchase, EasyPaisa, order confirmation">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👕</text></svg>">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>Solo<span>Wear</span></h1>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="cart.html" class="cart-link">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">0</span>
+                        </a></li>
+                        <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i></a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Checkout Progress -->
+    <section class="checkout-progress">
+        <div class="container">
+            <div class="progress-steps">
+                <div class="step active">
+                    <span class="step-number">1</span>
+                    <span class="step-text">Cart</span>
+                </div>
+                <div class="step active">
+                    <span class="step-number">2</span>
+                    <span class="step-text">Information</span>
+                </div>
+                <div class="step active">
+                    <span class="step-number">3</span>
+                    <span class="step-text">Payment</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <span class="step-text">Confirmation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Content -->
+    <section class="checkout-section section-padding">
+        <div class="container">
+            <h1 class="checkout-title">Secure Checkout</h1>
+            
+            <div class="checkout-layout">
+                <!-- Checkout Form -->
+                <div class="checkout-form-container">
+                    <form id="checkoutForm" class="checkout-form">
+                        <!-- Shipping Information -->
+                        <div class="form-section">
+                            <h2><i class="fas fa-user"></i> Contact Information</h2>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                        </div>
+
+                        <!-- Shipping Address -->
+                        <div class="form-section">
+                            <h2><i class="fas fa-map-marker-alt"></i> Shipping Address</h2>
+                            <div class="form-group">
+                                <label for="address">Address *</label>
+                                <input type="text" id="address" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <input type="text" id="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="zip">ZIP / Postal Code *</label>
+                                    <input type="text" id="zip" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country *</label>
+                                <select id="country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="US">United States</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="PK">Pakistan</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="AU">Australia</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div class="form-section">
+                            <h2><i class="fas fa-credit-card"></i> Payment Method</h2>
+                            
+                            <div class="payment-method-selector">
+                                <div class="payment-option">
+                                    <input type="radio" id="card" name="payment" value="card" checked>
+                                    <label for="card">
+                                        <i class="fas fa-credit-card"></i>
+                                        <span>Credit/Debit Card</span>
+                                    </label>
+                                    <div class="payment-details" id="cardDetails">
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="cardNumber">Card Number *</label>
+                                                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="expiry">Expiry Date *</label>
+                                                <input type="text" id="expiry" placeholder="MM/YY">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cvv">CVV *</label>
+                                                <input type="text" id="cvv" placeholder="123">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="payment-option">
+                                    <input type="radio" id="easypaisa" name="payment" value="easypaisa">
+                                    <label for="easypaisa">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <span>EasyPaisa</span>
+                                    </label>
+                                    <div class="payment-details" id="easypaisaDetails">
+                                        <div class="easypaisa-instructions">
+                                            <div class="instruction-step">
+                                                <span class="step-number">1</span>
+                                                <p>Send payment to EasyPaisa number: <strong>0300-XXXXXXX</strong></p>
+                                            </div>
+                                            <div class="instruction-step">
+                                                <span class="step-number">2</span>
+                                                <p>Complete the transaction in your EasyPaisa app</p>
+                                            </div>
+                                            <div class="instruction-step">
+                                                <span class="step-number">3</span>
+                                                <p>Enter your transaction ID below</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="transactionId">EasyPaisa Transaction ID *</label>
+                                            <input type="text" id="transactionId" placeholder="Enter your transaction ID">
+                                            <small class="form-note">Please send amount to [0300-XXXXXXX] and upload Trx ID here.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="payment-option">
+                                    <input type="radio" id="paypal" name="payment" value="paypal">
+                                    <label for="paypal">
+                                        <i class="fab fa-paypal"></i>
+                                        <span>PayPal</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Terms -->
+                        <div class="form-section">
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="terms" required>
+                                <label for="terms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a> *</label>
+                            </div>
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="newsletter" checked>
+                                <label for="newsletter">Subscribe to our newsletter for exclusive offers and updates</label>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="form-section">
+                            <button type="submit" class="btn btn-gold btn-full">Complete Order</button>
+                            <p class="secure-notice">
+                                <i class="fas fa-lock"></i> Your payment information is secured with 256-bit encryption
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order Summary -->
+                <aside class="checkout-summary">
+                    <h2>Order Summary</h2>
+                    <div class="order-items" id="checkoutItems">
+                        <!-- Order items will be loaded via JavaScript -->
+                    </div>
+                    <div class="summary-totals">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="checkoutSubtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span>FREE</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax</span>
+                            <span id="checkoutTax">$0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="checkoutTotal">$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="shipping-estimate">
+                        <i class="fas fa-shipping-fast"></i>
+                        <div>
+                            <h4>Estimated Delivery</h4>
+                            <p>2-3 business days with express shipping</p>
+                        </div>
+                    </div>
+                    
+                    <div class="return-policy">
+                        <i class="fas fa-undo-alt"></i>
+                        <div>
+                            <h4>30-Day Returns</h4>
+                            <p>Free returns within 30 days of delivery</p>
+                        </div>
+                    </div>
+                    
+                    <div class="support-info">
+                        <i class="fas fa-headset"></i>
+                        <div>
+                            <h4>Need Help?</h4>
+                            <p>Contact support: support@solo-wear.com</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <h2>Solo<span>Wear</span></h2>
+                    </div>
+                    <p class="footer-description">Redefining luxury in everyday essentials through exceptional craftsmanship and sustainable practices.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Shop All</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> support@solo-wear.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Luxury Avenue, Fashion District</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Solo Wear. All rights reserved. | Premium Luxury Clothing</p>
+                <div class="security-badges">
+                    <span><i class="fas fa-lock"></i> Secure Payment</span>
+                    <span><i class="fas fa-shield-alt"></i> SSL Encrypted</span>
+                    <span><i class="fas fa-check-circle"></i> Verified</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+            loadCheckoutItems();
+            updateCheckoutSummary();
+            initPaymentMethods();
+        });
+    </script>
+</body>
+</html>
