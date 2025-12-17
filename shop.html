@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop All | Solo Wear - Premium Luxury T-Shirts</title>
+    <meta name="description" content="Browse our complete collection of premium luxury T-shirts. Filter by category, price, and style. Experience the perfect blend of comfort and sophistication.">
+    <meta name="keywords" content="premium t-shirts, luxury shirts, men's t-shirts, women's t-shirts, minimalist fashion, high-quality basics">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👕</text></svg>">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>Solo<span>Wear</span></h1>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="shop.html" class="active">Shop</a></li>
+                        <li><a href="cart.html" class="cart-link">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">0</span>
+                        </a></li>
+                        <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i></a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Shop Collection</h1>
+            <p>Premium essentials for the modern wardrobe</p>
+        </div>
+    </section>
+
+    <!-- Shop Content -->
+    <section class="shop-section section-padding">
+        <div class="container">
+            <div class="shop-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <div class="filter-section">
+                        <h3>Categories</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" class="category-filter" value="classic">
+                                <span>Classic Collection</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" class="category-filter" value="premium">
+                                <span>Premium Line</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" class="category-filter" value="limited">
+                                <span>Limited Edition</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" class="category-filter" value="v-neck">
+                                <span>V-Neck</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" class="category-filter" value="crew-neck">
+                                <span>Crew Neck</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter-section">
+                        <h3>Price Range</h3>
+                        <div class="price-slider">
+                            <div class="price-range">
+                                <span>$0</span>
+                                <span>$500</span>
+                            </div>
+                            <div class="slider-container">
+                                <div class="slider-track"></div>
+                                <input type="range" min="0" max="500" value="0" class="slider-min" id="priceMin">
+                                <input type="range" min="0" max="500" value="500" class="slider-max" id="priceMax">
+                            </div>
+                            <div class="price-values">
+                                <span>Min: $<span id="minValue">0</span></span>
+                                <span>Max: $<span id="maxValue">500</span></span>
+                            </div>
+                            <button class="btn btn-small apply-price">Apply Filter</button>
+                        </div>
+                    </div>
+                    <div class="filter-section">
+                        <h3>Sort By</h3>
+                        <select class="sort-select" id="sortProducts">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name: A to Z</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-outline btn-full" id="clearFilters">Clear All Filters</button>
+                </aside>
+
+                <!-- Products Grid -->
+                <main class="products-container">
+                    <div class="products-header">
+                        <p id="productsCount">Loading products...</p>
+                        <div class="view-controls">
+                            <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+                            <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                        </div>
+                    </div>
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be loaded via JavaScript -->
+                        <div class="loading-spinner">
+                            <div class="spinner"></div>
+                            <p>Loading premium collection...</p>
+                        </div>
+                    </div>
+                    <div id="noProductsMessage" class="no-products" style="display: none;">
+                        <i class="fas fa-search"></i>
+                        <h3>No products found</h3>
+                        <p>Try adjusting your filters or check back soon for new arrivals.</p>
+                        <button class="btn btn-outline" id="resetFiltersBtn">Reset Filters</button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter section-padding">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>New Arrivals Alert</h2>
+                <p>Be the first to know about our latest collections and exclusive offers</p>
+                <form id="shopNewsletterForm" class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-gold">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <h2>Solo<span>Wear</span></h2>
+                    </div>
+                    <p class="footer-description">Redefining luxury in everyday essentials through exceptional craftsmanship and sustainable practices.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Shop All</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> support@solo-wear.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Luxury Avenue, Fashion District</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Solo Wear. All rights reserved. | Premium Luxury Clothing</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+            loadAllProducts();
+            initShopFilters();
+        });
+    </script>
+</body>
+</html>
