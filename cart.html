@@ -3,102 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Cart | Solo Wear</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <title>Cart | Solo Wear</title>
+    <meta name="description" content="Your shopping cart at Solo Wear. Review your selected luxury fashion items.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>">
 </head>
 <body>
-    <!-- Header/Navigation -->
-    <header class="luxury-header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <h1><span class="gold-text">SOLO</span> WEAR</h1>
-                    <div class="gold-bar"></div>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="cart.html" class="active cart-icon">Cart <span id="cart-count">0</span></a></li>
-                    <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SOLO <span class="gold">WEAR</span></a>
+            
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="cart.html" class="nav-link active">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="admin.html" class="nav-link admin-btn">
+                    <i class="fas fa-lock"></i>
+                </a>
+            </div>
+            
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <!-- Page Banner -->
-    <section class="page-banner">
+    <!-- Cart Header -->
+    <section class="cart-header">
         <div class="container">
-            <h1 data-aos="fade-up">YOUR <span class="gold-text">CART</span></h1>
-            <p data-aos="fade-up" data-aos-delay="200">Review your selected items</p>
+            <h1 class="page-title">YOUR <span class="gold">CART</span></h1>
+            <p class="page-subtitle">Review your selected luxury items</p>
         </div>
     </section>
 
-    <!-- Cart Section -->
+    <!-- Cart Content -->
     <section class="cart-section">
         <div class="container">
             <div class="cart-container">
-                <!-- Cart Table -->
                 <div class="cart-table-container">
-                    <table class="cart-table" id="cart-table">
+                    <table class="cart-table" id="cartTable">
                         <thead>
                             <tr>
                                 <th>Product</th>
                                 <th>Price</th>
-                                <th>Size</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody id="cart-items">
-                            <!-- Cart items will be loaded dynamically -->
+                        <tbody id="cartItems">
+                            <!-- Cart items will be loaded here -->
+                            <tr id="emptyCartMessage">
+                                <td colspan="5" class="empty-cart">
+                                    <i class="fas fa-shopping-bag fa-2x"></i>
+                                    <p>Your cart is empty</p>
+                                    <a href="shop.html" class="cta-button">Start Shopping</a>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
-                    
-                    <!-- Empty Cart Message -->
-                    <div class="empty-cart" id="empty-cart">
-                        <div class="empty-cart-content">
-                            <i class="fas fa-shopping-cart"></i>
-                            <h3>Your Cart is Empty</h3>
-                            <p>Add some exquisite items from our collection to get started.</p>
-                            <a href="shop.html" class="cta-button">Continue Shopping</a>
-                        </div>
-                    </div>
                 </div>
-                
+
                 <!-- Cart Summary -->
-                <div class="cart-summary">
-                    <h3>Order Summary</h3>
-                    <div class="summary-details">
-                        <div class="summary-row">
-                            <span>Subtotal</span>
-                            <span id="subtotal">PKR 0</span>
-                        </div>
-                        <div class="summary-row">
-                            <span>Delivery</span>
-                            <span id="delivery">PKR 0</span>
-                        </div>
-                        <div class="summary-row total">
-                            <span>Total</span>
-                            <span id="total">PKR 0</span>
-                        </div>
+                <div class="cart-summary" id="cartSummary" style="display: none;">
+                    <h3>ORDER SUMMARY</h3>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="cartSubtotal">$0.00</span>
                     </div>
-                    <div class="summary-note">
-                        <p><i class="fas fa-info-circle gold-text"></i> Free delivery on orders above PKR 10,000</p>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span>Free</span>
                     </div>
-                    <a href="checkout.html" class="checkout-btn" id="checkout-btn">PROCEED TO CHECKOUT</a>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="cartTotal">$0.00</span>
+                    </div>
+                    <a href="checkout.html" class="checkout-button">PROCEED TO CHECKOUT</a>
                     <a href="shop.html" class="continue-shopping">Continue Shopping</a>
                 </div>
             </div>
@@ -106,66 +92,44 @@
     </section>
 
     <!-- Footer -->
-    <footer class="luxury-footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <h2><span class="gold-text">SOLO</span> WEAR</h2>
-                    <p>Redefining Pakistani Fashion with Luxury & Elegance</p>
+                <div class="footer-section">
+                    <h3 class="footer-logo">SOLO <span class="gold">WEAR</span></h3>
+                    <p>Redefining luxury fashion with unparalleled craftsmanship and exclusive designs.</p>
                 </div>
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="cart.html">Your Cart</a></li>
-                    </ul>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="shop.html">Shop Collection</a>
+                    <a href="cart.html">View Cart</a>
                 </div>
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-phone gold-text"></i> +92 312 1399449</p>
-                    <p><i class="fas fa-envelope gold-text"></i> info@solowear.pk</p>
-                    <p><i class="fas fa-map-marker-alt gold-text"></i> Lahore, Pakistan</p>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone gold"></i> +92 312 1399449</p>
+                    <p><i class="fas fa-envelope gold"></i> info@solowear.com</p>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2023 Solo Wear. All rights reserved. | Premium Pakistani Fashion Brand</p>
+                <p>&copy; 2024 Solo Wear. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
+    <!-- WhatsApp Float -->
     <a href="https://wa.me/923121399449" target="_blank" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
-        <span class="pulse-ring"></span>
     </a>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="script.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-        
-        // Update cart count and load cart items on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            updateCartCount();
-            loadCartItems();
-            
-            // Setup checkout button
-            document.getElementById('checkout-btn').addEventListener('click', function(e) {
-                const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                if (cart.length === 0) {
-                    e.preventDefault();
-                    alert('Your cart is empty. Please add items to your cart before checkout.');
-                }
-            });
-        });
+    <script type="module" src="script.js"></script>
+    <script type="module">
+        import { loadCartItems, updateCartCount } from './firebase-config.js';
+        loadCartItems();
+        updateCartCount();
     </script>
 </body>
 </html>
