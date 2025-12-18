@@ -4,172 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop | Solo Wear</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <meta name="description" content="Browse our exclusive collection of luxury fashion items at Solo Wear. Premium quality, designer clothing.">
+    <meta name="keywords" content="shop luxury fashion, buy premium clothing, designer collection, Solo Wear shop">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>">
 </head>
 <body>
-    <!-- Header/Navigation -->
-    <header class="luxury-header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <h1><span class="gold-text">SOLO</span> WEAR</h1>
-                    <div class="gold-bar"></div>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html" class="active">Shop</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="cart.html" class="cart-icon">Cart <span id="cart-count">0</span></a></li>
-                    <li><a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SOLO <span class="gold">WEAR</span></a>
+            
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link active">Shop</a>
+                <a href="cart.html" class="nav-link">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="admin.html" class="nav-link admin-btn">
+                    <i class="fas fa-lock"></i>
+                </a>
+            </div>
+            
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <!-- Page Banner -->
-    <section class="page-banner">
+    <!-- Shop Header -->
+    <section class="shop-header">
         <div class="container">
-            <h1 data-aos="fade-up">SHOP <span class="gold-text">COLLECTION</span></h1>
-            <p data-aos="fade-up" data-aos-delay="200">Discover our exclusive range of premium fashion</p>
+            <h1 class="page-title">EXCLUSIVE <span class="gold">COLLECTION</span></h1>
+            <p class="page-subtitle">Discover our curated selection of luxury fashion</p>
         </div>
     </section>
 
     <!-- Shop Filters -->
     <section class="shop-filters">
         <div class="container">
-            <div class="filter-controls">
-                <div class="filter-search">
-                    <input type="text" id="search-input" placeholder="Search products...">
-                    <button id="search-btn"><i class="fas fa-search"></i></button>
+            <div class="filter-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <i class="fas fa-search"></i>
                 </div>
-                <div class="filter-sort">
-                    <select id="sort-select">
-                        <option value="default">Sort by: Default</option>
-                        <option value="price-low">Price: Low to High</option>
-                        <option value="price-high">Price: High to Low</option>
-                        <option value="name">Name: A to Z</option>
-                    </select>
+                <select id="sortSelect" class="sort-select">
+                    <option value="newest">Newest First</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="shop-products">
+        <div class="container">
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded from Firebase -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Loading our exclusive collection...</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Grid -->
-    <section class="product-grid-section">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <div class="product-grid" id="product-grid">
-                <!-- Products will be dynamically loaded here -->
-                <div class="loading-products">
-                    <p>Loading products...</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-logo">SOLO <span class="gold">WEAR</span></h3>
+                    <p>Redefining luxury fashion with unparalleled craftsmanship and exclusive designs.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="shop.html">Shop Collection</a>
+                    <a href="cart.html">View Cart</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone gold"></i> +92 312 1399449</p>
+                    <p><i class="fas fa-envelope gold"></i> info@solowear.com</p>
                 </div>
             </div>
             
-            <!-- No Products Message (Initially hidden) -->
-            <div class="no-products" id="no-products" style="display: none;">
-                <div class="no-products-content">
-                    <i class="fas fa-box-open"></i>
-                    <h3>No Products Available</h3>
-                    <p>Our collection is currently being updated. Please check back soon or visit our physical store.</p>
-                    <a href="index.html" class="cta-button">Return to Home</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quick View Modal -->
-    <div class="modal-overlay" id="quickview-modal">
-        <div class="modal-container">
-            <div class="modal-header">
-                <h2>Quick View</h2>
-                <button class="modal-close" id="close-quickview">&times;</button>
-            </div>
-            <div class="modal-body" id="quickview-content">
-                <!-- Quick view content will be loaded here dynamically -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="luxury-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h2><span class="gold-text">SOLO</span> WEAR</h2>
-                    <p>Redefining Pakistani Fashion with Luxury & Elegance</p>
-                </div>
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="cart.html">Your Cart</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-phone gold-text"></i> +92 312 1399449</p>
-                    <p><i class="fas fa-envelope gold-text"></i> info@solowear.pk</p>
-                    <p><i class="fas fa-map-marker-alt gold-text"></i> Lahore, Pakistan</p>
-                </div>
-            </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Solo Wear. All rights reserved. | Premium Pakistani Fashion Brand</p>
+                <p>&copy; 2024 Solo Wear. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
+    <!-- WhatsApp Float -->
     <a href="https://wa.me/923121399449" target="_blank" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
-        <span class="pulse-ring"></span>
     </a>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="script.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-        
-        // Update cart count on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            updateCartCount();
-            loadProducts();
-            
-            // Setup search and sort functionality
-            document.getElementById('search-btn').addEventListener('click', function() {
-                const searchTerm = document.getElementById('search-input').value;
-                loadProducts(searchTerm);
-            });
-            
-            document.getElementById('search-input').addEventListener('keyup', function(e) {
-                if (e.key === 'Enter') {
-                    const searchTerm = document.getElementById('search-input').value;
-                    loadProducts(searchTerm);
-                }
-            });
-            
-            document.getElementById('sort-select').addEventListener('change', function() {
-                const searchTerm = document.getElementById('search-input').value;
-                loadProducts(searchTerm, this.value);
-            });
-        });
+    <script type="module">
+        import { loadAllProducts } from './firebase-config.js';
+        loadAllProducts();
     </script>
 </body>
 </html>
