@@ -3,112 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop | Solo Wear</title>
-    <meta name="description" content="Browse our exclusive collection of luxury fashion items at Solo Wear. Premium quality, designer clothing.">
-    <meta name="keywords" content="shop luxury fashion, buy premium clothing, designer collection, Solo Wear shop">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- SEO Meta Tags -->
+    <title>Shop Premium T-Shirts - Solo Wear Collection</title>
+    <meta name="description" content="Browse our exclusive collection of premium t-shirts. Vibrant designs, premium cotton, and perfect fit for every style.">
+    <meta name="keywords" content="t-shirts collection, buy t-shirts online, premium t-shirts Pakistan, Solo Wear shop">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Shop Premium T-Shirts - Solo Wear Collection">
+    <meta property="og:description" content="Browse our exclusive collection of premium t-shirts.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://solowear.pk/shop.html">
+    
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">SOLO <span class="gold">WEAR</span></a>
-            
-            <div class="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="shop.html" class="nav-link active">Shop</a>
-                <a href="cart.html" class="nav-link">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-count">0</span>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">SOLO</span>
+                    <span class="logo-sub">WEAR</span>
                 </a>
-                <a href="admin.html" class="nav-link admin-btn">
-                    <i class="fas fa-lock"></i>
-                </a>
-            </div>
-            
-            <button class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Shop Header -->
-    <section class="shop-header">
-        <div class="container">
-            <h1 class="page-title">EXCLUSIVE <span class="gold">COLLECTION</span></h1>
-            <p class="page-subtitle">Discover our curated selection of luxury fashion</p>
-        </div>
-    </section>
-
-    <!-- Shop Filters -->
-    <section class="shop-filters">
-        <div class="container">
-            <div class="filter-container">
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Search products...">
-                    <i class="fas fa-search"></i>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link active">Shop</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="cart.html" class="nav-link cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a></li>
+                    <li><a href="admin.html" class="nav-link admin-icon">
+                        <i class="fas fa-lock"></i>
+                    </a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
-                <select id="sortSelect" class="sort-select">
-                    <option value="newest">Newest First</option>
-                    <option value="price-low">Price: Low to High</option>
-                    <option value="price-high">Price: High to Low</option>
-                </select>
-            </div>
+            </nav>
         </div>
-    </section>
+    </header>
 
-    <!-- Products Grid -->
-    <section class="shop-products">
-        <div class="container">
-            <div class="products-grid" id="productsGrid">
-                <!-- Products will be dynamically loaded from Firebase -->
-                <div class="loading-spinner">
-                    <div class="spinner"></div>
-                    <p>Loading our exclusive collection...</p>
+    <main>
+        <!-- Shop Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">Our Collection</h1>
+                <p class="page-subtitle">Premium t-shirts designed for comfort and style</p>
+            </div>
+        </section>
+
+        <!-- Shop Filters -->
+        <section class="shop-filters">
+            <div class="container">
+                <div class="filter-controls">
+                    <div class="filter-search">
+                        <input type="text" id="searchProducts" placeholder="Search products...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    
+                    <div class="filter-sort">
+                        <select id="sortProducts">
+                            <option value="default">Sort By</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name: A to Z</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="shop-products">
+            <div class="container">
+                <div class="products-grid" id="allProducts">
+                    <!-- Products will be loaded dynamically from Firebase -->
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                        <p>Loading products...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-logo">SOLO <span class="gold">WEAR</span></h3>
-                    <p>Redefining luxury fashion with unparalleled craftsmanship and exclusive designs.</p>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo footer-logo">
+                        <span class="logo-text">SOLO</span>
+                        <span class="logo-sub">WEAR</span>
+                    </a>
+                    <p>Premium T-Shirts for the modern individual. Express your style with our vibrant collection.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
                 
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <a href="index.html">Home</a>
-                    <a href="shop.html">Shop Collection</a>
-                    <a href="cart.html">View Cart</a>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                    </ul>
                 </div>
                 
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p><i class="fas fa-phone gold"></i> +92 312 1399449</p>
-                    <p><i class="fas fa-envelope gold"></i> info@solowear.com</p>
+                <div class="footer-col">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +92 312 1399449</li>
+                        <li><i class="fas fa-envelope"></i> info@solowear.pk</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
+                    </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Solo Wear. All rights reserved.</p>
+                <p>&copy; 2023 Solo Wear. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/923121399449" target="_blank" class="whatsapp-float">
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923121399449" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script type="module">
-        import { loadAllProducts } from './firebase-config.js';
-        loadAllProducts();
-    </script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
