@@ -3,106 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product | Solo Wear</title>
-    <meta name="description" content="View detailed information about this luxury fashion item at Solo Wear. Premium quality and craftsmanship.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Premium t-shirt details at Solo Wear. View product specifications, size guide, and add to cart. Free shipping across Pakistan.">
+    <meta name="keywords" content="premium t-shirt details, Solo Wear product, t-shirt size guide, add to cart, luxury apparel Pakistan">
+    <meta name="author" content="Solo Wear">
+    <title>Product Details | Solo Wear Premium T-Shirts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👕</text></svg>">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">SOLO <span class="gold">WEAR</span></a>
-            
-            <div class="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="shop.html" class="nav-link">Shop</a>
-                <a href="cart.html" class="nav-link">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-count">0</span>
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">SOLO WEAR</span>
+                    <span class="logo-gold">Premium</span>
                 </a>
-                <a href="admin.html" class="nav-link admin-btn">
-                    <i class="fas fa-lock"></i>
-                </a>
-            </div>
-            
-            <button class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Collection</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- Product Detail -->
-    <section class="product-detail-section">
+    <main class="product-page">
         <div class="container">
-            <div class="product-detail-container" id="productDetail">
-                <!-- Product will be dynamically loaded from Firebase -->
-                <div class="loading-spinner">
-                    <div class="spinner"></div>
-                    <p>Loading product details...</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Related Products -->
-    <section class="related-products">
-        <div class="container">
-            <h2 class="section-title">YOU MAY ALSO <span class="gold">LIKE</span></h2>
-            <div class="products-grid" id="relatedProducts">
-                <!-- Related products will be loaded here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-logo">SOLO <span class="gold">WEAR</span></h3>
-                    <p>Redefining luxury fashion with unparalleled craftsmanship and exclusive designs.</p>
+            <div class="product-detail">
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img id="product-image" src="https://via.placeholder.com/600x800/050505/D4AF37?text=Premium+T-Shirt" 
+                             alt="Solo Wear Premium T-Shit - Midnight Gold Collection" 
+                             class="product-img">
+                    </div>
                 </div>
                 
-                <div class="footer-section">
+                <div class="product-info">
+                    <nav class="breadcrumb">
+                        <a href="index.html">Home</a> / 
+                        <a href="shop.html">Collection</a> / 
+                        <span id="product-category">Premium T-Shirt</span>
+                    </nav>
+                    
+                    <h1 id="product-title" class="product-title">Midnight Gold Classic T-Shirt</h1>
+                    
+                    <div class="product-price">
+                        <span id="product-price" class="price">PKR 2,499</span>
+                        <span class="original-price">PKR 3,499</span>
+                        <span class="discount">-30%</span>
+                    </div>
+                    
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-text">4.7 (128 reviews)</span>
+                    </div>
+                    
+                    <div class="product-description">
+                        <p id="product-description">Experience luxury in its purest form with our Midnight Gold Classic T-Shirt. Crafted from 230 GSM premium combed cotton, this piece features subtle gold thread detailing against deep black fabric for a sophisticated look.</p>
+                        
+                        <div class="features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>230 GSM Premium Combed Cotton</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Color-Fast (50+ Washes)</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Reinforced Neck & Shoulders</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Made in Pakistan</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="size-selector">
+                        <h3>Select Size</h3>
+                        <div class="size-options">
+                            <button class="size-option active" data-size="S">S</button>
+                            <button class="size-option" data-size="M">M</button>
+                            <button class="size-option" data-size="L">L</button>
+                            <button class="size-option" data-size="XL">XL</button>
+                        </div>
+                        <a href="#" class="size-guide-link">Size Guide</a>
+                    </div>
+                    
+                    <div class="quantity-selector">
+                        <h3>Quantity</h3>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus" aria-label="Decrease quantity">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="number" id="quantity" value="1" min="1" max="10">
+                            <button class="qty-btn plus" aria-label="Increase quantity">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <button class="btn btn-gold add-to-cart" id="add-to-cart">
+                            <i class="fas fa-shopping-bag"></i>
+                            Add to Cart
+                        </button>
+                        <button class="btn btn-outline wishlist-btn">
+                            <i class="far fa-heart"></i>
+                            Wishlist
+                        </button>
+                    </div>
+                    
+                    <div class="delivery-info">
+                        <div class="delivery-item">
+                            <i class="fas fa-shipping-fast"></i>
+                            <div>
+                                <strong>Free Shipping</strong>
+                                <p>Across Pakistan on orders above PKR 5,000</p>
+                            </div>
+                        </div>
+                        <div class="delivery-item">
+                            <i class="fas fa-undo"></i>
+                            <div>
+                                <strong>Easy Returns</strong>
+                                <p>14-day return policy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <section class="product-tabs">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="description">Description</button>
+                    <button class="tab-btn" data-tab="specs">Specifications</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews</button>
+                </div>
+                
+                <div class="tab-content active" id="description">
+                    <h3>Premium Craftsmanship</h3>
+                    <p>Every Solo Wear t-shirt undergoes 14 quality checks. Our fabric is pre-shrunk and color-locked to maintain its premium appearance through countless wears and washes.</p>
+                    <p>The Midnight Gold collection represents the pinnacle of our craftsmanship, featuring:</p>
+                    <ul>
+                        <li>Double-stitched seams for durability</li>
+                        <li>Reinforced collar that won't curl</li>
+                        <li>Gold-accented label detailing</li>
+                        <li>Breathable fabric suitable for Pakistan's climate</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-content" id="specs">
+                    <table class="specs-table">
+                        <tr>
+                            <th>Fabric</th>
+                            <td>100% Premium Combed Cotton (230 GSM)</td>
+                        </tr>
+                        <tr>
+                            <th>Fit</th>
+                            <td>Regular Fit (True to Size)</td>
+                        </tr>
+                        <tr>
+                            <th>Weight</th>
+                            <td>Approx. 180-200g depending on size</td>
+                        </tr>
+                        <tr>
+                            <th>Care</th>
+                            <td>Machine wash cold, tumble dry low, iron low heat</td>
+                        </tr>
+                        <tr>
+                            <th>Origin</th>
+                            <td>Made in Pakistan</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="tab-content" id="reviews">
+                    <div class="review">
+                        <div class="review-header">
+                            <div class="reviewer">
+                                <strong>Ahmed R.</strong>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <span class="review-date">2 weeks ago</span>
+                        </div>
+                        <p>"Best t-shirt I've ever owned. The fabric quality is exceptional and the fit is perfect. Already ordered two more!"</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SOLO WEAR</h3>
+                    <p>Crafting premium apparel for the modern gentleman since 2023.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
                     <h4>Quick Links</h4>
-                    <a href="index.html">Home</a>
-                    <a href="shop.html">Shop Collection</a>
-                    <a href="cart.html">View Cart</a>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Collection</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                    </ul>
                 </div>
-                
-                <div class="footer-section">
+                <div class="footer-col">
                     <h4>Contact</h4>
-                    <p><i class="fas fa-phone gold"></i> +92 312 1399449</p>
-                    <p><i class="fas fa-envelope gold"></i> info@solowear.com</p>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +92 312 1399449</li>
+                        <li><i class="fas fa-envelope"></i> info@solo-wear.pk</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
+                    </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2024 Solo Wear. All rights reserved.</p>
+                <p>&copy; 2023 Solo Wear. All rights reserved.</p>
+                <p>Premium T-Shirts in Pakistan</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/923121399449" target="_blank" class="whatsapp-float">
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923121399449?text=Hi%20Solo%20Wear!%20I'm%20interested%20in%20your%20premium%20t-shirts." 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script type="module">
-        import { loadProductDetail, loadRelatedProducts } from './firebase-config.js';
-        
-        // Get product ID from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('id');
-        
-        if (productId) {
-            loadProductDetail(productId);
-            loadRelatedProducts(productId);
-        } else {
-            window.location.href = 'shop.html';
-        }
-    </script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
