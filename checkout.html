@@ -3,282 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Checkout - Secure Order | Solo Wear</title>
-    <meta name="description" content="Complete your purchase securely. Enter your details and choose payment method.">
-    
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Checkout - Secure Order | Solo Wear">
-    <meta property="og:description" content="Complete your purchase securely.">
-    <meta property="og:type" content="website">
-    
+    <meta name="description" content="Secure checkout for Solo Wear premium t-shirts. Enter delivery details and complete payment via Easypaisa, JazzCash, or card.">
+    <meta name="keywords" content="checkout, order t-shirts, payment Pakistan, Easypaisa payment, Solo Wear delivery">
+    <meta name="author" content="Solo Wear">
+    <title>Checkout | Solo Wear Premium T-Shirts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👕</text></svg>">
 </head>
 <body>
-    <!-- Navigation -->
-    <header class="header">
+    <header class="main-header">
         <div class="container">
-            <nav class="navbar">
+            <nav class="main-nav">
                 <a href="index.html" class="logo">
-                    <span class="logo-text">SOLO</span>
-                    <span class="logo-sub">WEAR</span>
+                    <span class="logo-text">SOLO WEAR</span>
+                    <span class="logo-gold">Premium</span>
                 </a>
-                
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="shop.html" class="nav-link">Shop</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="cart.html" class="nav-link cart-icon">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Collection</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="cart.html" class="cart-icon">
                         <i class="fas fa-shopping-bag"></i>
                         <span class="cart-count">0</span>
                     </a></li>
-                    <li><a href="admin.html" class="nav-link admin-icon">
-                        <i class="fas fa-lock"></i>
-                    </a></li>
                 </ul>
-                
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
             </nav>
         </div>
     </header>
 
-    <main>
-        <!-- Checkout Hero -->
-        <section class="page-hero">
-            <div class="container">
-                <h1 class="page-title">Checkout</h1>
-                <p class="page-subtitle">Complete your order securely</p>
-            </div>
-        </section>
-
-        <!-- Checkout Section -->
-        <section class="checkout-section">
-            <div class="container">
-                <div class="checkout-container">
-                    <!-- Checkout Form -->
-                    <div class="checkout-form-section">
-                        <h2>Shipping Information</h2>
-                        
-                        <form id="checkoutForm">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="fullName">Full Name *</label>
-                                    <input type="text" id="fullName" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="phone">Phone Number *</label>
-                                    <input type="tel" id="phone" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="address">Shipping Address *</label>
-                                <textarea id="address" rows="3" required></textarea>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="city">City *</label>
-                                    <select id="city" required>
-                                        <option value="">Select City</option>
-                                        <option value="karachi">Karachi</option>
-                                        <option value="lahore">Lahore</option>
-                                        <option value="islamabad">Islamabad</option>
-                                        <option value="rawalpindi">Rawalpindi</option>
-                                        <option value="faisalabad">Faisalabad</option>
-                                        <option value="multan">Multan</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="postalCode">Postal Code</label>
-                                    <input type="text" id="postalCode">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="notes">Order Notes (Optional)</label>
-                                <textarea id="notes" rows="3" placeholder="Any special instructions for your order..."></textarea>
-                            </div>
-                        </form>
-                        
-                        <!-- Payment Method -->
-                        <div class="payment-method">
-                            <h2>Payment Method</h2>
-                            
-                            <div class="payment-options">
-                                <div class="payment-option active" data-method="easypaisa">
-                                    <div class="option-header">
-                                        <i class="fas fa-mobile-alt"></i>
-                                        <h3>EasyPaisa</h3>
-                                    </div>
-                                    <p>Pay via EasyPaisa Mobile Account or ATM</p>
-                                </div>
-                                
-                                <div class="payment-option" data-method="cod">
-                                    <div class="option-header">
-                                        <i class="fas fa-truck"></i>
-                                        <h3>Cash on Delivery</h3>
-                                    </div>
-                                    <p>Pay when you receive your order</p>
-                                </div>
-                            </div>
-                            
-                            <!-- EasyPaisa Details -->
-                            <div class="easypaisa-details" id="easypaisaDetails">
-                                <h3>EasyPaisa Payment Instructions</h3>
-                                <div class="instructions">
-                                    <p><strong>Step 1:</strong> Send payment to:</p>
-                                    <div class="payment-info">
-                                        <div class="info-item">
-                                            <span>Account Number:</span>
-                                            <strong>0312 1399449</strong>
-                                        </div>
-                                        <div class="info-item">
-                                            <span>Account Name:</span>
-                                            <strong>Solo Wear</strong>
-                                        </div>
-                                    </div>
-                                    
-                                    <p><strong>Step 2:</strong> After payment, enter the Transaction ID below:</p>
-                                    <div class="transaction-input">
-                                        <input type="text" id="transactionId" placeholder="Enter your EasyPaisa Transaction ID">
-                                        <button class="btn btn-secondary" id="verifyTransaction">Verify</button>
-                                    </div>
-                                    
-                                    <p class="note"><i class="fas fa-info-circle"></i> Your order will be processed once payment is verified.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- COD Details -->
-                            <div class="cod-details" id="codDetails" style="display: none;">
-                                <h3>Cash on Delivery</h3>
-                                <p>Pay with cash when your order is delivered. An additional PKR 150 will be charged for COD orders.</p>
-                                <p class="note"><i class="fas fa-info-circle"></i> Available in selected cities only.</p>
-                            </div>
+    <main class="checkout-page">
+        <div class="container">
+            <h1 class="page-title">Complete Your <span class="gold-text">Order</span></h1>
+            
+            <div class="checkout-container">
+                <div class="checkout-steps">
+                    <div class="step active">
+                        <div class="step-number">1</div>
+                        <div class="step-info">
+                            <span class="step-title">Shipping Details</span>
+                            <span class="step-desc">Enter delivery information</span>
                         </div>
                     </div>
-                    
-                    <!-- Order Summary -->
-                    <div class="order-summary-section">
-                        <div class="order-summary-card">
-                            <h2>Order Summary</h2>
-                            
-                            <div class="order-items" id="checkoutItems">
-                                <!-- Order items will be loaded from cart -->
-                            </div>
-                            
-                            <div class="order-summary-details">
-                                <div class="summary-row">
-                                    <span>Subtotal</span>
-                                    <span id="orderSubtotal">PKR 0</span>
-                                </div>
-                                
-                                <div class="summary-row">
-                                    <span>Shipping</span>
-                                    <span id="orderShipping">PKR 200</span>
-                                </div>
-                                
-                                <div class="summary-row">
-                                    <span>COD Fee</span>
-                                    <span id="codFee">PKR 0</span>
-                                </div>
-                                
-                                <div class="summary-row total-row">
-                                    <span><strong>Total</strong></span>
-                                    <span><strong id="orderTotal">PKR 0</strong></span>
-                                </div>
-                            </div>
-                            
-                            <div class="terms-agreement">
-                                <input type="checkbox" id="agreeTerms" required>
-                                <label for="agreeTerms">I agree to the <a href="#">terms and conditions</a> and <a href="#">privacy policy</a></label>
-                            </div>
-                            
-                            <button class="btn btn-primary btn-block" id="placeOrderBtn">
-                                Place Order
-                            </button>
-                            
-                            <p class="secure-notice">
-                                <i class="fas fa-lock"></i> Your information is secure and encrypted
-                            </p>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-info">
+                            <span class="step-title">Payment</span>
+                            <span class="step-desc">Choose payment method</span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-info">
+                            <span class="step-title">Confirmation</span>
+                            <span class="step-desc">Review and confirm</span>
                         </div>
                     </div>
                 </div>
+                
+                <div class="checkout-form">
+                    <form id="order-form">
+                        <h2>Shipping Information</h2>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="full-name">Full Name *</label>
+                                <input type="text" id="full-name" required placeholder="Enter your full name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" required placeholder="03XX XXXXXXX" pattern="[0-9]{11}">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="you@example.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="city">City *</label>
+                                <select id="city" required>
+                                    <option value="">Select City</option>
+                                    <option value="Lahore">Lahore</option>
+                                    <option value="Karachi">Karachi</option>
+                                    <option value="Islamabad">Islamabad</option>
+                                    <option value="Rawalpindi">Rawalpindi</option>
+                                    <option value="Faisalabad">Faisalabad</option>
+                                    <option value="Multan">Multan</option>
+                                    <option value="Peshawar">Peshawar</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="address">Complete Address *</label>
+                                <textarea id="address" required rows="3" placeholder="House #, Street, Area, Landmark"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="delivery-notes">Delivery Notes (Optional)</label>
+                                <input type="text" id="delivery-notes" placeholder="e.g., Call before delivery">
+                            </div>
+                        </div>
+                        
+                        <h2>Payment Method</h2>
+                        
+                        <div class="payment-methods">
+                            <div class="payment-option active">
+                                <input type="radio" id="easypaisa" name="payment" value="easypaisa" checked>
+                                <label for="easypaisa">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <div>
+                                        <strong>Easypaisa</strong>
+                                        <p>Send payment to 0312 1399449</p>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="payment-option">
+                                <input type="radio" id="jazzcash" name="payment" value="jazzcash">
+                                <label for="jazzcash">
+                                    <i class="fas fa-wallet"></i>
+                                    <div>
+                                        <strong>JazzCash</strong>
+                                        <p>Send payment to 0312 1399449</p>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="payment-option">
+                                <input type="radio" id="cod" name="payment" value="cod">
+                                <label for="cod">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    <div>
+                                        <strong>Cash on Delivery</strong>
+                                        <p>Pay when you receive</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-details" id="easypaisa-details">
+                            <h3>Easypaisa Payment Instructions</h3>
+                            <div class="instructions">
+                                <div class="instruction-step">
+                                    <span class="step-num">1</span>
+                                    <p>Open Easypaisa App</p>
+                                </div>
+                                <div class="instruction-step">
+                                    <span class="step-num">2</span>
+                                    <p>Go to <strong>Send Money</strong> → <strong>To Mobile Account</strong></p>
+                                </div>
+                                <div class="instruction-step">
+                                    <span class="step-num">3</span>
+                                    <p>Enter Mobile Number: <strong>0312 1399449</strong></p>
+                                </div>
+                                <div class="instruction-step">
+                                    <span class="step-num">4</span>
+                                    <p>Enter Amount: <strong id="payment-amount">PKR 0</strong></p>
+                                </div>
+                                <div class="instruction-step">
+                                    <span class="step-num">5</span>
+                                    <p>Enter your 5-digit PIN</p>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="transaction-id">Transaction ID *</label>
+                                <input type="text" id="transaction-id" required placeholder="Enter 10-digit Transaction ID">
+                                <small>You'll receive this after payment</small>
+                            </div>
+                        </div>
+                        
+                        <div class="order-summary-checkout">
+                            <h3>Order Summary</h3>
+                            <div class="summary-items" id="checkout-items">
+                                <!-- Cart items will be loaded here -->
+                            </div>
+                            <div class="summary-total">
+                                <div class="total-row">
+                                    <span>Subtotal</span>
+                                    <span id="checkout-subtotal">PKR 0</span>
+                                </div>
+                                <div class="total-row">
+                                    <span>Shipping</span>
+                                    <span id="checkout-shipping">PKR 200</span>
+                                </div>
+                                <div class="total-row grand-total">
+                                    <span>Total Amount</span>
+                                    <span id="checkout-total">PKR 200</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="terms-agreement">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">I agree to the <a href="#">Terms & Conditions</a> and understand that my order will be processed within 24 hours. Delivery typically takes 2-4 business days.</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-gold place-order-btn">
+                            <i class="fas fa-lock"></i>
+                            Place Order
+                        </button>
+                    </form>
+                </div>
             </div>
-        </section>
+        </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="index.html" class="logo footer-logo">
-                        <span class="logo-text">SOLO</span>
-                        <span class="logo-sub">WEAR</span>
-                    </a>
-                    <p>Premium T-Shirts for the modern individual. Express your style with our vibrant collection.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <h3>SOLO WEAR</h3>
+                    <p>Crafting premium apparel for the modern gentleman since 2023.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
-                
                 <div class="footer-col">
-                    <h3>Quick Links</h3>
+                    <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="cart.html">Shopping Cart</a></li>
+                        <li><a href="shop.html">Collection</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="cart.html">Cart</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-col">
-                    <h3>Customer Service</h3>
+                    <h4>Contact</h4>
                     <ul>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Return Policy</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Contact Info</h3>
-                    <ul class="contact-info">
                         <li><i class="fas fa-phone"></i> +92 312 1399449</li>
-                        <li><i class="fas fa-envelope"></i> info@solowear.pk</li>
+                        <li><i class="fas fa-envelope"></i> info@solo-wear.pk</li>
                         <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
                     </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
                 <p>&copy; 2023 Solo Wear. All rights reserved.</p>
+                <p>Premium T-Shirts in Pakistan</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/923121399449" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/923121399449?text=Hi%20Solo%20Wear!%20I'm%20interested%20in%20your%20premium%20t-shirts." 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
