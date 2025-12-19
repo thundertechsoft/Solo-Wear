@@ -3,133 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart | Solo Wear</title>
-    <meta name="description" content="Your shopping cart at Solo Wear. Review your selected luxury fashion items.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Solo Wear shopping cart. Review your premium t-shirts, adjust quantities, and proceed to checkout. Free shipping available.">
+    <meta name="keywords" content="shopping cart, Solo Wear cart, premium t-shirts cart, checkout Pakistan, online shopping cart">
+    <meta name="author" content="Solo Wear">
+    <title>Shopping Cart | Solo Wear Premium T-Shirts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👕</text></svg>">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">SOLO <span class="gold">WEAR</span></a>
-            
-            <div class="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="shop.html" class="nav-link">Shop</a>
-                <a href="cart.html" class="nav-link active">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-count">0</span>
-                </a>
-                <a href="admin.html" class="nav-link admin-btn">
-                    <i class="fas fa-lock"></i>
-                </a>
-            </div>
-            
-            <button class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Cart Header -->
-    <section class="cart-header">
+    <header class="main-header">
         <div class="container">
-            <h1 class="page-title">YOUR <span class="gold">CART</span></h1>
-            <p class="page-subtitle">Review your selected luxury items</p>
+            <nav class="main-nav">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">SOLO WEAR</span>
+                    <span class="logo-gold">Premium</span>
+                </a>
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Collection</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="cart.html" class="cart-icon active">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a></li>
+                </ul>
+            </nav>
         </div>
-    </section>
+    </header>
 
-    <!-- Cart Content -->
-    <section class="cart-section">
+    <main class="cart-page">
         <div class="container">
+            <h1 class="page-title">Your <span class="gold-text">Shopping Cart</span></h1>
+            
             <div class="cart-container">
-                <div class="cart-table-container">
-                    <table class="cart-table" id="cartTable">
-                        <thead>
-                            <tr>
-                                <th>Product</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="cartItems">
-                            <!-- Cart items will be loaded here -->
-                            <tr id="emptyCartMessage">
-                                <td colspan="5" class="empty-cart">
-                                    <i class="fas fa-shopping-bag fa-2x"></i>
-                                    <p>Your cart is empty</p>
-                                    <a href="shop.html" class="cta-button">Start Shopping</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Cart Summary -->
-                <div class="cart-summary" id="cartSummary" style="display: none;">
-                    <h3>ORDER SUMMARY</h3>
-                    <div class="summary-row">
-                        <span>Subtotal</span>
-                        <span id="cartSubtotal">$0.00</span>
+                <div class="cart-items">
+                    <div class="cart-header">
+                        <h2>Items (<span id="item-count">0</span>)</h2>
+                        <button class="clear-cart" id="clear-cart">Clear Cart</button>
                     </div>
-                    <div class="summary-row">
-                        <span>Shipping</span>
-                        <span>Free</span>
+                    
+                    <div class="cart-list" id="cart-list">
+                        <!-- Cart items will be loaded here -->
+                        <div class="empty-cart" id="empty-cart">
+                            <i class="fas fa-shopping-bag"></i>
+                            <h3>Your cart is empty</h3>
+                            <p>Add premium t-shirts from our collection</p>
+                            <a href="shop.html" class="btn btn-gold">Browse Collection</a>
+                        </div>
                     </div>
-                    <div class="summary-row total">
-                        <span>Total</span>
-                        <span id="cartTotal">$0.00</span>
-                    </div>
-                    <a href="checkout.html" class="checkout-button">PROCEED TO CHECKOUT</a>
-                    <a href="shop.html" class="continue-shopping">Continue Shopping</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-logo">SOLO <span class="gold">WEAR</span></h3>
-                    <p>Redefining luxury fashion with unparalleled craftsmanship and exclusive designs.</p>
                 </div>
                 
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <a href="index.html">Home</a>
-                    <a href="shop.html">Shop Collection</a>
-                    <a href="cart.html">View Cart</a>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p><i class="fas fa-phone gold"></i> +92 312 1399449</p>
-                    <p><i class="fas fa-envelope gold"></i> info@solowear.com</p>
+                <div class="cart-summary">
+                    <h2>Order Summary</h2>
+                    
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="subtotal">PKR 0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span id="shipping">PKR 200</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Discount</span>
+                            <span id="discount">- PKR 0</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="total">PKR 200</span>
+                        </div>
+                    </div>
+                    
+                    <div class="coupon-section">
+                        <input type="text" id="coupon-code" placeholder="Enter coupon code">
+                        <button class="btn btn-outline" id="apply-coupon">Apply</button>
+                    </div>
+                    
+                    <a href="checkout.html" class="btn btn-gold checkout-btn" id="checkout-btn">
+                        Proceed to Checkout
+                    </a>
+                    
+                    <div class="payment-methods">
+                        <p>We Accept:</p>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fas fa-mobile-alt"></i>
+                            <i class="fas fa-university"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="security-note">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure SSL Encryption</span>
+                    </div>
                 </div>
             </div>
             
+            <div class="cart-features">
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure Payment</h3>
+                    <p>Your payment information is encrypted</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-truck"></i>
+                    <h3>Free Shipping</h3>
+                    <p>On orders above PKR 5,000</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-undo"></i>
+                    <h3>Easy Returns</h3>
+                    <p>14-day hassle-free return policy</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Via WhatsApp +92 312 1399449</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SOLO WEAR</h3>
+                    <p>Crafting premium apparel for the modern gentleman since 2023.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Collection</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +92 312 1399449</li>
+                        <li><i class="fas fa-envelope"></i> info@solo-wear.pk</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
+                    </ul>
+                </div>
+            </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Solo Wear. All rights reserved.</p>
+                <p>&copy; 2023 Solo Wear. All rights reserved.</p>
+                <p>Premium T-Shirts in Pakistan</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/923121399449" target="_blank" class="whatsapp-float">
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923121399449?text=Hi%20Solo%20Wear!%20I'm%20interested%20in%20your%20premium%20t-shirts." 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script type="module" src="script.js"></script>
-    <script type="module">
-        import { loadCartItems, updateCartCount } from './firebase-config.js';
-        loadCartItems();
-        updateCartCount();
-    </script>
 </body>
 </html>
