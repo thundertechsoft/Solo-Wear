@@ -3,124 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Solo Wear premium t-shirt collection. Browse our exclusive Midnight Gold collection of luxury t-shirts in Pakistan. Sizes: S, M, L, XL.">
-    <meta name="keywords" content="premium t-shirts collection, Solo Wear shop, luxury t-shirts Pakistan, black gold t-shirts, designer t-shirts online">
-    <meta name="author" content="Solo Wear">
-    <title>The Collection | Solo Wear Premium T-Shirts</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Shop Collection | Solo Wear</title>
+    <meta name="description" content="Browse Solo Wear's exclusive collection of luxury fashion. Premium fabrics, exclusive designs, and fast delivery.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👕</text></svg>">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="main-header">
-        <div class="container">
-            <nav class="main-nav">
-                <a href="index.html" class="logo">
-                    <span class="logo-text">SOLO WEAR</span>
-                    <span class="logo-gold">Premium</span>
+    <!-- Navigation (Same as index.html) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SOLO WEAR</a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link active">Shop</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="cart.html" class="nav-link cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
                 </a>
-                <button class="menu-toggle" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html" class="active">Collection</a></li>
-                    <li><a href="about.html">Our Story</a></li>
-                    <li><a href="cart.html" class="cart-icon">
-                        <i class="fas fa-shopping-bag"></i>
-                        <span class="cart-count">0</span>
-                    </a></li>
-                </ul>
-            </nav>
+                <a href="admin.html" class="nav-link admin-link">
+                    <i class="fas fa-lock"></i>
+                </a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <main class="shop-page">
-        <section class="shop-hero">
-            <div class="container">
-                <h1 class="page-title">The <span class="gold-text">Midnight Gold</span> Collection</h1>
-                <p class="page-subtitle">Premium T-Shirts Redefined</p>
-            </div>
-        </section>
+    <!-- Shop Header -->
+    <section class="shop-header">
+        <div class="container">
+            <h1 class="page-title">The Collection</h1>
+            <p class="page-subtitle">Curated Luxury for the Discerning Individual</p>
+        </div>
+    </section>
 
-        <section class="filters-section">
-            <div class="container">
-                <div class="filters">
-                    <div class="filter-group">
-                        <label for="sort">Sort by:</label>
-                        <select id="sort" class="filter-select">
-                            <option value="newest">Newest First</option>
-                            <option value="price-low">Price: Low to High</option>
-                            <option value="price-high">Price: High to Low</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <button class="filter-btn active">All</button>
-                        <button class="filter-btn">Classic</button>
-                        <button class="filter-btn">Limited</button>
-                        <button class="filter-btn">Minimal</button>
-                    </div>
+    <!-- Filter Bar -->
+    <section class="filter-bar">
+        <div class="container">
+            <div class="filter-content">
+                <div class="filter-left">
+                    <span>Showing <span id="productCount">12</span> products</span>
+                </div>
+                <div class="filter-right">
+                    <select id="sortFilter" class="filter-select">
+                        <option value="newest">Newest First</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="products-section">
-            <div class="container">
-                <div class="products-grid" id="products-grid">
-                    <!-- Products will be loaded from Firebase -->
-                    <div class="loading">Loading premium collection...</div>
-                </div>
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid" id="productsGrid">
+                <!-- Products loaded from Firebase -->
+                <div class="loading">Loading our collection...</div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="main-footer">
+    <!-- Footer (Same as index.html) -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>SOLO WEAR</h3>
-                    <p>Crafting premium apparel for the modern gentleman since 2023.</p>
+                    <p>Redefining luxury fashion in Pakistan since 2010.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="shop.html">Collection</a></li>
-                        <li><a href="about.html">Our Story</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-                    </ul>
+                    <a href="index.html">Home</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="about.html">About Us</a>
+                    <a href="cart.html">Cart</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><i class="fas fa-phone"></i> +92 312 1399449</li>
-                        <li><i class="fas fa-envelope"></i> info@solo-wear.pk</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
-                    </ul>
+                    <h4>Support</h4>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Shipping Policy</a>
+                    <a href="#">Returns & Exchanges</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> The Solo Tower, DHA Phase 6, Karachi</p>
+                    <p><i class="fas fa-phone"></i> +92 21 34567890</p>
+                    <p><i class="fas fa-envelope"></i> info@solo-wear.com</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Solo Wear. All rights reserved.</p>
-                <p>Premium T-Shirts in Pakistan</p>
+                <p>&copy; 2024 Solo Wear. All rights reserved. | <a href="admin.html" class="admin-login">Admin Login</a></p>
             </div>
         </div>
     </footer>
-
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/923121399449?text=Hi%20Solo%20Wear!%20I'm%20interested%20in%20your%20premium%20t-shirts." 
-       class="whatsapp-float" 
-       target="_blank"
-       aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
 
     <script type="module" src="script.js"></script>
 </body>
