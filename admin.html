@@ -3,265 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Solo Wear Admin Panel - Manage products, inventory, and orders.">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Solo Wear | Admin Panel</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Admin Panel | Solo Wear</title>
+    <meta name="description" content="Solo Wear admin control panel for product and order management.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="admin-body">
-    <div class="admin-container" id="login-screen">
-        <div class="admin-login">
+<body>
+    <!-- Admin Login Screen -->
+    <div class="admin-login-screen" id="adminLogin">
+        <div class="login-container">
             <div class="login-header">
-                <h1><i class="fas fa-lock"></i> Solo Wear Admin</h1>
-                <p>Enter PIN to access control panel</p>
+                <h1><i class="fas fa-lock"></i> Admin Access</h1>
+                <p>Solo Wear Control Panel</p>
             </div>
             <div class="login-form">
                 <div class="form-group">
-                    <label for="pin">4-Digit PIN</label>
-                    <input type="password" id="pin" maxlength="4" pattern="\d{4}" placeholder="Enter 4-digit PIN">
+                    <label for="adminPin">Enter PIN</label>
+                    <input type="password" id="adminPin" placeholder="Enter 4-digit PIN" maxlength="4">
                 </div>
-                <button id="login-btn" class="btn btn-gold">
-                    <i class="fas fa-sign-in-alt"></i> Access Panel
-                </button>
-                <div class="pin-hint">Hint: The PIN is 4047</div>
-            </div>
-            <div class="login-footer">
-                <p><i class="fas fa-exclamation-triangle"></i> Restricted Access - Authorized Personnel Only</p>
+                <button class="btn-gold" id="loginBtn">Access Dashboard</button>
+                <p class="login-note">Restricted access. Unauthorized entry is prohibited.</p>
             </div>
         </div>
     </div>
 
-    <div class="admin-panel" id="admin-panel" style="display: none;">
-        <header class="admin-header">
-            <div class="container">
-                <div class="admin-nav">
-                    <div class="admin-logo">
-                        <h1><i class="fas fa-crown"></i> Solo Wear Admin</h1>
-                        <p>Premium T-Shirts Control Panel</p>
-                    </div>
-                    <div class="admin-user">
-                        <span><i class="fas fa-user-shield"></i> Administrator</span>
-                        <button id="logout-btn" class="btn btn-outline">
-                            <i class="fas fa-sign-out-alt"></i> Logout
+    <!-- Admin Dashboard (Hidden until login) -->
+    <div class="admin-dashboard" id="adminDashboard" style="display: none;">
+        <!-- Admin Navigation -->
+        <nav class="admin-navbar">
+            <div class="admin-nav-container">
+                <div class="admin-brand">
+                    <h1><i class="fas fa-crown"></i> SOLO WEAR ADMIN</h1>
+                    <button class="logout-btn" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Admin Content -->
+        <div class="admin-container">
+            <!-- Dashboard Stats -->
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <h3>Total Products</h3>
+                    <p id="totalProducts">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Orders</h3>
+                    <p id="totalOrders">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Revenue</h3>
+                    <p id="totalRevenue">PKR 0</p>
+                </div>
+            </div>
+
+            <!-- Product Management -->
+            <div class="admin-section">
+                <h2><i class="fas fa-box"></i> Product Management</h2>
+                
+                <!-- Add Product Form -->
+                <div class="admin-card">
+                    <h3>Add New Product</h3>
+                    <form id="addProductForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="productName">Product Name *</label>
+                                <input type="text" id="productName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="productPrice">Price (PKR) *</label>
+                                <input type="number" id="productPrice" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="productImage">Image URL *</label>
+                            <input type="url" id="productImage" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productDescription">Description *</label>
+                            <textarea id="productDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="productCategory">Category *</label>
+                            <select id="productCategory" required>
+                                <option value="men">Men</option>
+                                <option value="women">Women</option>
+                                <option value="accessories">Accessories</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-gold">
+                            <i class="fas fa-plus"></i> Add Product
                         </button>
+                    </form>
+                </div>
+
+                <!-- Product List -->
+                <div class="admin-card">
+                    <h3>Manage Products</h3>
+                    <div class="product-list" id="adminProductList">
+                        <!-- Products will be loaded here -->
+                        <div class="loading">Loading products...</div>
                     </div>
                 </div>
             </div>
-        </header>
 
-        <main class="admin-main">
-            <div class="container">
-                <div class="admin-grid">
-                    <aside class="admin-sidebar">
-                        <nav class="admin-menu">
-                            <a href="#dashboard" class="menu-item active">
-                                <i class="fas fa-tachometer-alt"></i> Dashboard
-                            </a>
-                            <a href="#products" class="menu-item">
-                                <i class="fas fa-tshirt"></i> Products
-                            </a>
-                            <a href="#orders" class="menu-item">
-                                <i class="fas fa-shopping-cart"></i> Orders
-                            </a>
-                            <a href="#analytics" class="menu-item">
-                                <i class="fas fa-chart-bar"></i> Analytics
-                            </a>
-                        </nav>
-                        
-                        <div class="admin-stats">
-                            <h3>Quick Stats</h3>
-                            <div class="stat-item">
-                                <span>Total Products</span>
-                                <strong id="total-products">0</strong>
-                            </div>
-                            <div class="stat-item">
-                                <span>Total Orders</span>
-                                <strong id="total-orders">0</strong>
-                            </div>
-                            <div class="stat-item">
-                                <span>Today's Orders</span>
-                                <strong id="today-orders">0</strong>
-                            </div>
-                        </div>
-                    </aside>
-
-                    <section class="admin-content">
-                        <div id="dashboard" class="content-section active">
-                            <h2>Dashboard Overview</h2>
-                            <div class="dashboard-cards">
-                                <div class="dashboard-card">
-                                    <div class="card-icon">
-                                        <i class="fas fa-tshirt"></i>
-                                    </div>
-                                    <div class="card-info">
-                                        <h3>Products</h3>
-                                        <p>Manage your product catalog</p>
-                                        <button class="btn btn-gold" onclick="showSection('products')">
-                                            Manage Products
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="dashboard-card">
-                                    <div class="card-icon">
-                                        <i class="fas fa-shopping-cart"></i>
-                                    </div>
-                                    <div class="card-info">
-                                        <h3>Orders</h3>
-                                        <p>View and process orders</p>
-                                        <button class="btn btn-gold" onclick="showSection('orders')">
-                                            View Orders
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="dashboard-card">
-                                    <div class="card-icon">
-                                        <i class="fas fa-chart-line"></i>
-                                    </div>
-                                    <div class="card-info">
-                                        <h3>Analytics</h3>
-                                        <p>Sales and performance data</p>
-                                        <button class="btn btn-gold" onclick="showSection('analytics')">
-                                            View Analytics
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="products" class="content-section">
-                            <div class="section-header">
-                                <h2>Product Management</h2>
-                                <button class="btn btn-gold" id="add-product-btn">
-                                    <i class="fas fa-plus"></i> Add New Product
-                                </button>
-                            </div>
-
-                            <div class="product-form" id="product-form" style="display: none;">
-                                <h3>Add New Product</h3>
-                                <form id="new-product-form">
-                                    <div class="form-grid">
-                                        <div class="form-group">
-                                            <label for="product-name">Product Name *</label>
-                                            <input type="text" id="product-name" required placeholder="e.g., Midnight Gold Classic">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="product-price">Price (PKR) *</label>
-                                            <input type="number" id="product-price" required placeholder="2499" min="0">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="product-image">Image URL *</label>
-                                            <input type="url" id="product-image" required placeholder="https://example.com/image.jpg">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="product-category">Category *</label>
-                                            <select id="product-category" required>
-                                                <option value="Classic">Classic</option>
-                                                <option value="Limited">Limited Edition</option>
-                                                <option value="Minimal">Minimal</option>
-                                                <option value="Premium">Premium</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group full-width">
-                                            <label for="product-description">Description *</label>
-                                            <textarea id="product-description" required rows="4" placeholder="Describe the product features, fabric, and details..."></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-actions">
-                                        <button type="submit" class="btn btn-gold">
-                                            <i class="fas fa-save"></i> Save Product
-                                        </button>
-                                        <button type="button" class="btn btn-outline" id="cancel-form">
-                                            Cancel
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-
-                            <div class="products-table">
-                                <h3>All Products</h3>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Image</th>
-                                            <th>Name</th>
-                                            <th>Price</th>
-                                            <th>Category</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="products-table-body">
-                                        <!-- Products will be loaded here -->
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <div id="orders" class="content-section">
-                            <h2>Order Management</h2>
-                            <div class="orders-table">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Order ID</th>
-                                            <th>Customer</th>
-                                            <th>Amount</th>
-                                            <th>Status</th>
-                                            <th>Date</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="orders-table-body">
-                                        <!-- Orders will be loaded here -->
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <div id="analytics" class="content-section">
-                            <h2>Sales Analytics</h2>
-                            <div class="analytics-cards">
-                                <div class="analytics-card">
-                                    <h3>Total Revenue</h3>
-                                    <p class="analytics-value">PKR <span id="total-revenue">0</span></p>
-                                </div>
-                                <div class="analytics-card">
-                                    <h3>Average Order Value</h3>
-                                    <p class="analytics-value">PKR <span id="avg-order">0</span></p>
-                                </div>
-                                <div class="analytics-card">
-                                    <h3>Products Sold</h3>
-                                    <p class="analytics-value"><span id="products-sold">0</span></p>
-                                </div>
-                            </div>
-                            <div class="chart-placeholder">
-                                <h3>Sales Chart</h3>
-                                <div class="chart">
-                                    <p><i class="fas fa-chart-bar"></i> Sales data visualization will appear here</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+            <!-- Order Management -->
+            <div class="admin-section">
+                <h2><i class="fas fa-shopping-cart"></i> Order Management</h2>
+                <div class="admin-card">
+                    <div class="order-list" id="orderList">
+                        <!-- Orders will be loaded here -->
+                        <div class="loading">Loading orders...</div>
+                    </div>
                 </div>
             </div>
-        </main>
+        </div>
     </div>
 
     <script type="module" src="script.js"></script>
-    <script>
-        function showSection(sectionId) {
-            document.querySelectorAll('.content-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.querySelectorAll('.menu-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
-            document.querySelector(`.menu-item[href="#${sectionId}"]`).classList.add('active');
-        }
-    </script>
 </body>
 </html>
