@@ -3,151 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solo Wear | The Collection 2025</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Advanced SEO Meta Tags -->
+    <title>Shop Premium Luxury T-Shirts | Solo Wear Pakistan</title>
+    <meta name="description" content="Shop our exclusive collection of premium luxury t-shirts. Solo Wear offers the finest quality menswear in Pakistan with attention to detail and superior craftsmanship.">
+    <meta name="keywords" content="buy premium t-shirts Pakistan, luxury t-shirts online, Solo Wear shop, mens fashion Pakistan, designer t-shirts">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Solo Wear">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Shop Premium Luxury T-Shirts | Solo Wear">
+    <meta property="og:description" content="Explore our exclusive collection of premium luxury t-shirts in Pakistan.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1480">
+    <meta property="og:url" content="https://solowear.com/shop.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Styles & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Solo Wear 2025 Collection",
-        "description": "Ultra-premium luxury fashion collection",
-        "url": "https://solowear.com/shop.html",
-        "numberOfItems": "12",
-        "itemListOrder": "https://schema.org/ItemListOrderDescending"
-    }
-    </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">SOLO<span>WEAR</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html" class="active">Collection</a></li>
-                <li><a href="index.html#about">Story</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-bag"></i> <span id="cart-count">0</span></a></li>
-            </ul>
-            <button class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923121399449" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <!-- Shop Header -->
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html" aria-label="Solo Wear Home">
+                        <h1><span class="logo-highlight">SOLO</span> WEAR</h1>
+                        <p class="logo-tagline">Luxury Redefined</p>
+                    </a>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="main-nav">
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html" class="active">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="cart.html" class="cart-icon-link">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">0</span>
+                        </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>The Collection</h1>
-            <p>Curated luxury for the modern individual</p>
+            <h1 class="page-title">Our Collection</h1>
+            <p class="page-subtitle">Premium Luxury T-Shirts & Apparel</p>
         </div>
     </section>
 
-    <!-- Filter & Sort -->
-    <section class="shop-controls container">
-        <div class="controls-grid">
-            <div class="filter-section">
-                <button class="filter-btn"><i class="fas fa-filter"></i> Filter</button>
-                <div class="filter-dropdown">
-                    <div class="filter-option">
+    <!-- Shop Section -->
+    <main class="main-content">
+        <section class="shop-section">
+            <div class="container">
+                <!-- Filter Options -->
+                <aside class="shop-filters">
+                    <h3>Filter By</h3>
+                    <div class="filter-group">
                         <h4>Category</h4>
-                        <select id="category-filter">
-                            <option value="all">All Categories</option>
-                            <option value="t-shirt">T-Shirts</option>
-                            <option value="shirt">Shirts</option>
-                            <option value="jacket">Jackets</option>
-                            <option value="pants">Pants</option>
-                            <option value="accessory">Accessories</option>
-                        </select>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" checked> Premium T-Shirts
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Luxury Polo
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Casual Wear
+                            </label>
+                        </div>
                     </div>
-                    <div class="filter-option">
+                    
+                    <div class="filter-group">
                         <h4>Price Range</h4>
-                        <select id="price-filter">
-                            <option value="all">All Prices</option>
-                            <option value="0-5000">Under PKR 5,000</option>
-                            <option value="5000-10000">PKR 5,000 - 10,000</option>
-                            <option value="10000-20000">PKR 10,000 - 20,000</option>
-                            <option value="20000+">Over PKR 20,000</option>
-                        </select>
+                        <div class="price-range">
+                            <input type="range" min="1000" max="15000" value="15000" class="price-slider">
+                            <div class="price-values">
+                                <span>₨ 1,000</span>
+                                <span>₨ 15,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Color</h4>
+                        <div class="color-options">
+                            <span class="color-option black" title="Black"></span>
+                            <span class="color-option white" title="White"></span>
+                            <span class="color-option navy" title="Navy"></span>
+                            <span class="color-option gray" title="Gray"></span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-secondary filter-btn">Apply Filters</button>
+                </aside>
+
+                <!-- Product Grid -->
+                <div class="shop-products">
+                    <div class="products-grid">
+                        <!-- Product 1 -->
+                        <article class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1480" alt="Premium Black Cotton T-Shirt with Solo Wear logo" loading="lazy">
+                                <div class="product-badge">Bestseller</div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Midnight Classic</h3>
+                                <p class="product-description">Premium 100% Egyptian cotton t-shirt with minimalist design</p>
+                                <div class="product-price">
+                                    <span class="current-price">₨ 4,999</span>
+                                </div>
+                                <a href="product.html?id=1" class="btn btn-small">View Details</a>
+                            </div>
+                        </article>
+                        
+                        <!-- Product 2 -->
+                        <article class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?q=80&w=1374" alt="Luxury White T-Shirt with gold accent details" loading="lazy">
+                                <div class="product-badge">New Arrival</div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Alabaster Premium</h3>
+                                <p class="product-description">Luxury white tee with gold-accented collar trim</p>
+                                <div class="product-price">
+                                    <span class="current-price">₨ 5,499</span>
+                                </div>
+                                <a href="product.html?id=2" class="btn btn-small">View Details</a>
+                            </div>
+                        </article>
+                        
+                        <!-- Product 3 -->
+                        <article class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1515" alt="Navy Blue luxury t-shirt with premium stitching" loading="lazy">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Navy Elegance</h3>
+                                <p class="product-description">Deep navy t-shirt with reinforced premium stitching</p>
+                                <div class="product-price">
+                                    <span class="current-price">₨ 4,799</span>
+                                </div>
+                                <a href="product.html?id=3" class="btn btn-small">View Details</a>
+                            </div>
+                        </article>
+                        
+                        <!-- Product 4 -->
+                        <article class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=1368" alt="Charcoal gray premium t-shirt with textured fabric" loading="lazy">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Charcoal Texture</h3>
+                                <p class="product-description">Textured charcoal gray tee with premium fabric blend</p>
+                                <div class="product-price">
+                                    <span class="current-price">₨ 5,199</span>
+                                </div>
+                                <a href="product.html?id=4" class="btn btn-small">View Details</a>
+                            </div>
+                        </article>
+                        
+                        <!-- Product 5 -->
+                        <article class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=1376" alt="Premium olive green t-shirt with subtle pattern" loading="lazy">
+                                <div class="product-badge">Limited Edition</div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Olive Premium</h3>
+                                <p class="product-description">Olive green t-shirt with subtle pattern and premium finish</p>
+                                <div class="product-price">
+                                    <span class="current-price">₨ 5,899</span>
+                                </div>
+                                <a href="product.html?id=5" class="btn btn-small">View Details</a>
+                            </div>
+                        </article>
+                        
+                        <!-- Product 6 -->
+                        <article class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1372" alt="Burgundy luxury t-shirt with premium cotton fabric" loading="lazy">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Burgundy Luxe</h3>
+                                <p class="product-description">Rich burgundy t-shirt made from premium long-staple cotton</p>
+                                <div class="product-price">
+                                    <span class="current-price">₨ 6,299</span>
+                                </div>
+                                <a href="product.html?id=6" class="btn btn-small">View Details</a>
+                            </div>
+                        </article>
+                        
+                        <!-- Product 7 -->
+                        <article class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1364" alt="Classic white premium t-shirt with gold thread details" loading="lazy">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Classic White Gold</h3>
+                                <p class="product-description">White premium tee with gold thread accent stitching</p>
+                                <div class="product-price">
+                                    <span class="current-price">₨ 5,999</span>
+                                </div>
+                                <a href="product.html?id=7" class="btn btn-small">View Details</a>
+                            </div>
+                        </article>
+                        
+                        <!-- Product 8 -->
+                        <article class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1470" alt="Premium black t-shirt with texture and luxury finish" loading="lazy">
+                                <div class="product-badge">Exclusive</div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Black Texture Lux</h3>
+                                <p class="product-description">Textured black premium tee with luxury matte finish</p>
+                                <div class="product-price">
+                                    <span class="current-price">₨ 6,799</span>
+                                </div>
+                                <a href="product.html?id=8" class="btn btn-small">View Details</a>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <a href="#" class="page-link active">1</a>
+                        <a href="#" class="page-link">2</a>
+                        <a href="#" class="page-link">3</a>
+                        <a href="#" class="page-link">Next</a>
                     </div>
                 </div>
             </div>
-            <div class="sort-section">
-                <select id="sort-options">
-                    <option value="newest">Newest First</option>
-                    <option value="price-low">Price: Low to High</option>
-                    <option value="price-high">Price: High to Low</option>
-                    <option value="name">Name A-Z</option>
-                </select>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Grid -->
-    <section class="shop-products container">
-        <div class="products-grid" id="shop-products">
-            <!-- Products loaded via JavaScript -->
-        </div>
-        <div class="loading-spinner" id="loading-spinner">
-            <div class="spinner"></div>
-            <p>Loading luxury pieces...</p>
-        </div>
-    </section>
-
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/923121399449" class="whatsapp-btn" target="_blank" aria-label="Contact us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>SOLO<span>WEAR</span></h3>
-                    <p>Redefining luxury fashion for the modern era. Crafted with precision, designed for eternity.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3><span class="logo-highlight">SOLO</span> WEAR</h3>
+                        <p>Luxury Redefined</p>
+                    </div>
+                    <p class="footer-about">Pakistan's premier luxury fashion destination, offering premium quality t-shirts and menswear with unparalleled craftsmanship.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/923121399449" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                <div class="footer-col">
+                
+                <div class="footer-section">
                     <h4>Quick Links</h4>
-                    <ul>
+                    <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="shop.html">Collection</a></li>
-                        <li><a href="index.html#about">Our Story</a></li>
-                        <li><a href="admin.html">Admin Login</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="admin.html">Admin</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Shipping Information</a></li>
-                        <li><a href="#">Size Guide</a></li>
-                        <li><a href="#">Care Instructions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
+                
+                <div class="footer-section">
                     <h4>Contact Info</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Luxury District, Karachi, Pakistan</li>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-user"></i> Owner: Mohammed Abdullah</li>
                         <li><i class="fas fa-phone"></i> +92 312 1399449</li>
+                        <li><i class="fas fa-user"></i> Developer: Ahmed Raza</li>
+                        <li><i class="fas fa-phone"></i> 03093238209</li>
                         <li><i class="fas fa-envelope"></i> info@solowear.com</li>
                     </ul>
                 </div>
+                
+                <div class="footer-section">
+                    <h4>Policy</h4>
+                    <p class="policy-notice"><strong>No Returns / All Sales Final</strong></p>
+                    <p>Due to the premium nature of our products, all sales are final. We do not accept returns or exchanges unless the item arrives damaged or defective.</p>
+                </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 Solo Wear. All rights reserved. <strong class="no-returns">No Returns or Exchanges. All Sales Final.</strong></p>
+                <p>&copy; 2025 Solo Wear. All rights reserved. | Luxury Fashion Pakistan</p>
             </div>
         </div>
     </footer>
