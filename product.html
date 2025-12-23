@@ -3,161 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product | Solo Wear</title>
-    <meta name="description" content="Premium fashion product details. Exclusive design, premium fabric, and luxury craftsmanship.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Solo Wear | Product Details</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">SOLO WEAR</a>
-            <div class="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="shop.html" class="nav-link">Shop</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="cart.html" class="nav-link cart-icon">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-count">0</span>
-                </a>
-                <a href="admin.html" class="nav-link admin-link">
-                    <i class="fas fa-lock"></i>
-                </a>
-            </div>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
+        <div class="container">
+            <a href="index.html" class="logo">SOLO<span>WEAR</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Collection</a></li>
+                <li><a href="index.html#about">Story</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-bag"></i> <span id="cart-count">0</span></a></li>
+            </ul>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
         </div>
     </nav>
 
     <!-- Product Details -->
-    <main class="product-details">
-        <div class="container">
-            <!-- Breadcrumbs -->
-            <div class="breadcrumbs">
-                <a href="index.html">Home</a>
-                <span>/</span>
-                <a href="shop.html">Shop</a>
-                <span>/</span>
-                <span id="productName">Product</span>
+    <section class="product-details container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / <a href="shop.html">Collection</a> / <span id="product-category">Product</span>
+        </div>
+        
+        <div class="product-detail-grid">
+            <div class="product-images">
+                <div class="main-image">
+                    <img id="main-product-image" src="" alt="Product Image" onerror="this.src='https://images.unsplash.com/photo-1558769132-cb1cb458eabe?q=80&w=1974&auto=format&fit=crop'">
+                </div>
             </div>
-
-            <div class="product-container">
-                <!-- Product Image -->
-                <div class="product-image-container">
-                    <div class="product-main-image">
-                        <img id="productImage" src="" alt="Premium fashion product">
+            
+            <div class="product-info">
+                <h1 id="product-name">Product Name</h1>
+                <div class="product-price">
+                    <span class="price" id="product-price">PKR 0</span>
+                    <div class="shipping-fee">
+                        <i class="fas fa-shipping-fast"></i> + Shipping: <span id="product-shipping">PKR 0</span>
                     </div>
                 </div>
-
-                <!-- Product Info -->
-                <div class="product-info">
-                    <h1 id="productTitle" class="product-title">Product Name</h1>
-                    <div class="product-price">
-                        <span id="productPrice" class="price">PKR 0</span>
+                
+                <div class="product-description">
+                    <h3>Description</h3>
+                    <p id="product-description">Product description will load here.</p>
+                </div>
+                
+                <div class="product-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-tag"></i>
+                        <span>Category: <span id="product-category-text">Loading...</span></span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Premium Quality Guaranteed</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Handcrafted with attention to detail</span>
+                    </div>
+                </div>
+                
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                        <input type="number" id="quantity" value="1" min="1" max="10">
+                        <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
                     </div>
                     
-                    <div class="product-description">
-                        <p id="productDesc">Loading product details...</p>
-                    </div>
-
-                    <!-- Size Selector -->
-                    <div class="size-selector">
-                        <h3>Select Size</h3>
-                        <div class="size-options">
-                            <button class="size-btn" data-size="S">S</button>
-                            <button class="size-btn" data-size="M">M</button>
-                            <button class="size-btn active" data-size="L">L</button>
-                            <button class="size-btn" data-size="XL">XL</button>
-                        </div>
-                    </div>
-
-                    <!-- Add to Cart -->
-                    <button class="btn-gold add-to-cart-btn">
-                        <i class="fas fa-shopping-bag"></i>
-                        Add to Cart
+                    <button class="btn btn-primary add-to-cart-btn" id="add-to-cart">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
                     </button>
-
-                    <!-- Product Features -->
-                    <div class="product-features">
-                        <div class="feature">
-                            <i class="fas fa-truck"></i>
-                            <span>Free Shipping</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-undo"></i>
-                            <span>14-Day Returns</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Authenticity Guaranteed</span>
-                        </div>
-                    </div>
+                    
+                    <button class="btn btn-outline" id="buy-now">
+                        <i class="fas fa-bolt"></i> Buy Now
+                    </button>
+                </div>
+                
+                <div class="shipping-info">
+                    <h4><i class="fas fa-info-circle"></i> Shipping & Policy</h4>
+                    <p>• Standard delivery within 5-7 business days</p>
+                    <p>• Free shipping on orders over PKR 15,000</p>
+                    <p class="policy-warning"><strong>No Returns or Exchanges. All Sales Final.</strong></p>
                 </div>
             </div>
         </div>
-    </main>
-
-    <!-- Related Products -->
-    <section class="related-products">
-        <div class="container">
+        
+        <div class="related-products">
             <h2>You May Also Like</h2>
-            <div class="products-grid" id="relatedProducts">
-                <!-- Related products will be loaded here -->
+            <div class="products-grid" id="related-products">
+                <!-- Related products loaded via JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- Add to Cart Notification -->
-    <div class="cart-notification" id="cartNotification">
-        <div class="notification-content">
-            <i class="fas fa-check-circle"></i>
-            <span>Product added to cart successfully!</span>
-        </div>
-    </div>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/923121399449" class="whatsapp-btn" target="_blank" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>SOLO WEAR</h3>
-                    <p>Redefining luxury fashion in Pakistan since 2010.</p>
+                    <h3>SOLO<span>WEAR</span></h3>
+                    <p>Redefining luxury fashion for the modern era. Crafted with precision, designed for eternity.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-pinterest"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
-                    <a href="index.html">Home</a>
-                    <a href="shop.html">Shop</a>
-                    <a href="about.html">About Us</a>
-                    <a href="cart.html">Cart</a>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Collection</a></li>
+                        <li><a href="index.html#about">Our Story</a></li>
+                        <li><a href="admin.html">Admin Login</a></li>
+                    </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Support</h4>
-                    <a href="#">Contact Us</a>
-                    <a href="#">Shipping Policy</a>
-                    <a href="#">Returns & Exchanges</a>
-                    <a href="#">Privacy Policy</a>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Information</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                    </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contact Info</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> The Solo Tower, DHA Phase 6, Karachi</p>
-                    <p><i class="fas fa-phone"></i> +92 21 34567890</p>
-                    <p><i class="fas fa-envelope"></i> info@solo-wear.com</p>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Luxury District, Karachi, Pakistan</li>
+                        <li><i class="fas fa-phone"></i> +92 312 1399449</li>
+                        <li><i class="fas fa-envelope"></i> info@solowear.com</li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Solo Wear. All rights reserved. | <a href="admin.html" class="admin-login">Admin Login</a></p>
+                <p>&copy; 2025 Solo Wear. All rights reserved. <strong class="no-returns">No Returns or Exchanges. All Sales Final.</strong></p>
             </div>
         </div>
     </footer>
 
-    <script type="module" src="script.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Product ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        
+        // Set product ID in localStorage for script.js to use
+        if (productId) {
+            localStorage.setItem('currentProductId', productId);
+        }
+    </script>
 </body>
 </html>
