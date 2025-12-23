@@ -3,125 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel | Solo Wear</title>
-    <meta name="description" content="Solo Wear admin control panel for product and order management.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Solo Wear | Admin Panel</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Admin Login Screen -->
-    <div class="admin-login-screen" id="adminLogin">
-        <div class="login-container">
-            <div class="login-header">
-                <h1><i class="fas fa-lock"></i> Admin Access</h1>
-                <p>Solo Wear Control Panel</p>
-            </div>
-            <div class="login-form">
-                <div class="form-group">
-                    <label for="adminPin">Enter PIN</label>
-                    <input type="password" id="adminPin" placeholder="Enter 4-digit PIN" maxlength="4">
+    <!-- Admin Panel -->
+    <div class="admin-container">
+        <div class="admin-login" id="admin-login">
+            <div class="login-box">
+                <div class="login-header">
+                    <h2><i class="fas fa-lock"></i> Admin Access</h2>
+                    <p>Solo Wear Control Panel</p>
                 </div>
-                <button class="btn-gold" id="loginBtn">Access Dashboard</button>
-                <p class="login-note">Restricted access. Unauthorized entry is prohibited.</p>
+                <div class="login-form">
+                    <div class="form-group">
+                        <label for="pin">Enter Security PIN</label>
+                        <input type="password" id="pin" maxlength="4" placeholder="Enter 4-digit PIN">
+                        <div class="pin-error" id="pin-error"></div>
+                    </div>
+                    <button class="btn btn-primary" id="login-btn">Access Admin Panel</button>
+                    <div class="login-note">
+                        <p><i class="fas fa-info-circle"></i> Use PIN: 4047 to access the admin panel</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- Admin Dashboard (Hidden until login) -->
-    <div class="admin-dashboard" id="adminDashboard" style="display: none;">
-        <!-- Admin Navigation -->
-        <nav class="admin-navbar">
-            <div class="admin-nav-container">
-                <div class="admin-brand">
-                    <h1><i class="fas fa-crown"></i> SOLO WEAR ADMIN</h1>
-                    <button class="logout-btn" id="logoutBtn">
-                        <i class="fas fa-sign-out-alt"></i> Logout
-                    </button>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Admin Content -->
-        <div class="admin-container">
-            <!-- Dashboard Stats -->
-            <div class="admin-stats">
-                <div class="stat-card">
-                    <h3>Total Products</h3>
-                    <p id="totalProducts">0</p>
-                </div>
-                <div class="stat-card">
-                    <h3>Total Orders</h3>
-                    <p id="totalOrders">0</p>
-                </div>
-                <div class="stat-card">
-                    <h3>Revenue</h3>
-                    <p id="totalRevenue">PKR 0</p>
-                </div>
-            </div>
-
-            <!-- Product Management -->
-            <div class="admin-section">
-                <h2><i class="fas fa-box"></i> Product Management</h2>
-                
-                <!-- Add Product Form -->
-                <div class="admin-card">
-                    <h3>Add New Product</h3>
-                    <form id="addProductForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="productName">Product Name *</label>
-                                <input type="text" id="productName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="productPrice">Price (PKR) *</label>
-                                <input type="number" id="productPrice" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="productImage">Image URL *</label>
-                            <input type="url" id="productImage" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="productDescription">Description *</label>
-                            <textarea id="productDescription" rows="3" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="productCategory">Category *</label>
-                            <select id="productCategory" required>
-                                <option value="men">Men</option>
-                                <option value="women">Women</option>
-                                <option value="accessories">Accessories</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn-gold">
-                            <i class="fas fa-plus"></i> Add Product
+        
+        <div class="admin-panel" id="admin-panel" style="display: none;">
+            <header class="admin-header">
+                <div class="container">
+                    <div class="admin-header-content">
+                        <h1><i class="fas fa-crown"></i> Solo Wear Admin</h1>
+                        <button class="btn btn-outline" id="logout-btn">
+                            <i class="fas fa-sign-out-alt"></i> Logout
                         </button>
-                    </form>
-                </div>
-
-                <!-- Product List -->
-                <div class="admin-card">
-                    <h3>Manage Products</h3>
-                    <div class="product-list" id="adminProductList">
-                        <!-- Products will be loaded here -->
-                        <div class="loading">Loading products...</div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Order Management -->
-            <div class="admin-section">
-                <h2><i class="fas fa-shopping-cart"></i> Order Management</h2>
-                <div class="admin-card">
-                    <div class="order-list" id="orderList">
-                        <!-- Orders will be loaded here -->
-                        <div class="loading">Loading orders...</div>
+            </header>
+            
+            <main class="admin-main container">
+                <div class="admin-grid">
+                    <div class="admin-sidebar">
+                        <nav class="admin-nav">
+                            <ul>
+                                <li><a href="#dashboard" class="active" data-tab="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                                <li><a href="#add-product" data-tab="add-product"><i class="fas fa-plus-circle"></i> Add Product</a></li>
+                                <li><a href="#manage-products" data-tab="manage-products"><i class="fas fa-boxes"></i> Manage Products</a></li>
+                                <li><a href="#orders" data-tab="orders"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                                <li><a href="#settings" data-tab="settings"><i class="fas fa-cog"></i> Settings</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <div class="admin-content">
+                        <!-- Dashboard Tab -->
+                        <div class="admin-tab active" id="dashboard-tab">
+                            <h2><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
+                            <div class="dashboard-cards">
+                                <div class="dashboard-card">
+                                    <div class="card-icon">
+                                        <i class="fas fa-box"></i>
+                                    </div>
+                                    <div class="card-content">
+                                        <h3 id="total-products">0</h3>
+                                        <p>Total Products</p>
+                                    </div>
+                                </div>
+                                <div class="dashboard-card">
+                                    <div class="card-icon">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </div>
+                                    <div class="card-content">
+                                        <h3 id="total-orders">0</h3>
+                                        <p>Total Orders</p>
+                                    </div>
+                                </div>
+                                <div class="dashboard-card">
+                                    <div class="card-icon">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                    </div>
+                                    <div class="card-content">
+                                        <h3 id="total-revenue">PKR 0</h3>
+                                        <p>Total Revenue</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="recent-activity">
+                                <h3>Recent Activity</h3>
+                                <div class="activity-list" id="activity-list">
+                                    <div class="activity-item">
+                                        <i class="fas fa-info-circle"></i>
+                                        <p>Welcome to the Solo Wear Admin Panel. Add your first product to get started.</p>
+                                        <span>Just now</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Add Product Tab -->
+                        <div class="admin-tab" id="add-product-tab">
+                            <h2><i class="fas fa-plus-circle"></i> Add New Product</h2>
+                            <form id="add-product-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="product-name">Product Name *</label>
+                                        <input type="text" id="product-name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="product-category">Category *</label>
+                                        <select id="product-category" required>
+                                            <option value="">Select Category</option>
+                                            <option value="t-shirt">T-Shirts</option>
+                                            <option value="shirt">Shirts</option>
+                                            <option value="jacket">Jackets</option>
+                                            <option value="pants">Pants</option>
+                                            <option value="accessory">Accessories</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="product-image">Image URL *</label>
+                                    <input type="url" id="product-image" placeholder="https://example.com/image.jpg" required>
+                                    <div class="form-note">Direct link to high-quality product image</div>
+                                    <div class="image-preview">
+                                        <img id="image-preview" src="" alt="Image preview" onerror="this.style.display='none'">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="product-price">Price (PKR) *</label>
+                                        <input type="number" id="product-price" min="0" step="100" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="product-shipping">Shipping Fee (PKR) *</label>
+                                        <input type="number" id="product-shipping" min="0" step="50" value="200" required>
+                                        <div class="form-note">This will be added to cart total</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="product-description">Description *</label>
+                                    <textarea id="product-description" rows="5" required placeholder="Describe the product features, materials, and craftsmanship..."></textarea>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-upload"></i> Add Product
+                                    </button>
+                                    <button type="reset" class="btn btn-outline">
+                                        <i class="fas fa-redo"></i> Reset Form
+                                    </button>
+                                </div>
+                                
+                                <div class="form-status" id="form-status"></div>
+                            </form>
+                        </div>
+                        
+                        <!-- Manage Products Tab -->
+                        <div class="admin-tab" id="manage-products-tab">
+                            <h2><i class="fas fa-boxes"></i> Manage Products</h2>
+                            <div class="products-table-container">
+                                <table class="products-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>Category</th>
+                                            <th>Price</th>
+                                            <th>Shipping</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="products-table-body">
+                                        <!-- Products loaded via JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <!-- Orders Tab -->
+                        <div class="admin-tab" id="orders-tab">
+                            <h2><i class="fas fa-shopping-cart"></i> Orders</h2>
+                            <div class="orders-table-container">
+                                <table class="orders-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Order ID</th>
+                                            <th>Customer</th>
+                                            <th>Date</th>
+                                            <th>Items</th>
+                                            <th>Total</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="orders-table-body">
+                                        <tr>
+                                            <td colspan="6" class="no-data">No orders yet</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <!-- Settings Tab -->
+                        <div class="admin-tab" id="settings-tab">
+                            <h2><i class="fas fa-cog"></i> Settings</h2>
+                            <div class="settings-form">
+                                <div class="setting-group">
+                                    <h3>Shipping Settings</h3>
+                                    <div class="form-group">
+                                        <label for="default-shipping">Default Shipping Fee (PKR)</label>
+                                        <input type="number" id="default-shipping" value="200" min="0" step="50">
+                                        <div class="form-note">Default shipping fee for new products</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="free-shipping-threshold">Free Shipping Threshold (PKR)</label>
+                                        <input type="number" id="free-shipping-threshold" value="15000" min="0" step="1000">
+                                        <div class="form-note">Order total required for free shipping</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="setting-group">
+                                    <h3>Store Information</h3>
+                                    <div class="form-group">
+                                        <label for="store-phone">Store Phone</label>
+                                        <input type="text" id="store-phone" value="+92 312 1399449">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="store-email">Store Email</label>
+                                        <input type="email" id="store-email" value="info@solowear.com">
+                                    </div>
+                                </div>
+                                
+                                <div class="setting-group">
+                                    <h3>Policy Settings</h3>
+                                    <div class="form-group">
+                                        <div class="checkbox-group">
+                                            <input type="checkbox" id="no-returns-policy" checked disabled>
+                                            <label for="no-returns-policy">No Returns or Exchanges Policy (Always Enabled)</label>
+                                        </div>
+                                        <div class="form-note">This policy cannot be disabled as per brand guidelines</div>
+                                    </div>
+                                </div>
+                                
+                                <button class="btn btn-primary" id="save-settings">
+                                    <i class="fas fa-save"></i> Save Settings
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </main>
         </div>
     </div>
 
-    <script type="module" src="script.js"></script>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/923121399449" class="whatsapp-btn" target="_blank" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
 </body>
 </html>
