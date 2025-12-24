@@ -3,245 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Advanced SEO Meta Tags -->
-    <title>Solo Wear | Premium Luxury T-Shirts & Fashion Pakistan</title>
-    <meta name="description" content="Solo Wear - Pakistan's #1 luxury fashion brand. Premium t-shirts, exclusive menswear collections. Experience unparalleled quality and style with our 2025 collection.">
-    <meta name="keywords" content="Solo Wear, Premium T-Shirts, Luxury Fashion Pakistan, Menswear, Buy T-Shirts Online, Luxury T-Shirts, Fashion Pakistan, Premium Clothing">
-    <meta name="robots" content="index, follow">
+    <title>Solo Wear | Luxury Fashion Brand 2025</title>
+    <meta name="description" content="Solo Wear - Exclusive luxury fashion for the discerning individual. Premium quality clothing and accessories with timeless design.">
+    <meta name="keywords" content="luxury fashion, premium clothing, designer wear, exclusive fashion, haute couture">
     <meta name="author" content="Solo Wear">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Solo Wear | Premium Luxury Fashion Pakistan">
-    <meta property="og:description" content="Discover Pakistan's #1 luxury fashion brand. Premium t-shirts, exclusive menswear collections.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1503341455253-b2e72333dbdb?q=80&w=1920">
-    <meta property="og:url" content="https://solowear.com">
+    <meta property="og:title" content="Solo Wear | Luxury Fashion Brand 2025">
+    <meta property="og:description" content="Exclusive luxury fashion for the discerning individual">
     <meta property="og:type" content="website">
-    
-    <!-- Schema Markup for Brand -->
+    <meta property="og:url" content="https://solowear.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "ClothingStore",
+        "@type": "FashionBrand",
         "name": "Solo Wear",
-        "description": "Pakistan's premier luxury fashion brand specializing in premium t-shirts and menswear",
+        "description": "Exclusive luxury fashion brand offering premium clothing and accessories",
         "url": "https://solowear.com",
         "logo": "https://solowear.com/logo.png",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "Pakistan"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+92-312-1399449",
-            "contactType": "Customer Service"
-        },
-        "sameAs": [
-            "https://instagram.com/solowear",
-            "https://facebook.com/solowear",
-            "https://youtube.com/solowear"
-        ],
-        "priceRange": "$$$"
+        "founder": {
+            "@type": "Person",
+            "name": "Mohammed Abdullah"
+        }
     }
     </script>
-    
-    <!-- Styles & Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/923121399449" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- Admin Login Overlay -->
+    <div id="adminOverlay" class="admin-overlay">
+        <div class="admin-login-container">
+            <div class="admin-login-box">
+                <h2><i class="fas fa-lock"></i> Admin Access</h2>
+                <p class="admin-instruction">Enter PIN to access admin dashboard</p>
+                <div class="admin-input-group">
+                    <input type="password" id="adminPin" placeholder="Enter 6-digit PIN" maxlength="6">
+                    <button id="adminLoginBtn" class="btn-admin-login">Login</button>
+                </div>
+                <button id="adminCloseBtn" class="btn-admin-close"><i class="fas fa-times"></i></button>
+                <p class="admin-error" id="adminError"></p>
+            </div>
+        </div>
+    </div>
 
-    <!-- Header Section -->
+    <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="header-content">
-                <!-- Logo -->
-                <div class="logo">
-                    <a href="index.html" aria-label="Solo Wear Home">
-                        <h1><span class="logo-highlight">SOLO</span> WEAR</h1>
-                        <p class="logo-tagline">Luxury Redefined</p>
-                    </a>
-                </div>
-
-                <!-- Navigation -->
-                <nav class="main-nav">
-                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <ul class="nav-list">
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="cart.html" class="cart-icon-link">
-                            <i class="fas fa-shopping-bag"></i>
-                            <span class="cart-count">0</span>
-                        </a></li>
-                    </ul>
-                </nav>
+            <div class="logo">
+                <h1><span class="logo-highlight">SOLO</span> WEAR</h1>
+                <p class="logo-subtitle">LUXURY FASHION 2025</p>
             </div>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="shop.html"><i class="fas fa-shopping-bag"></i> Shop</a></li>
+                    <li><a href="product.html"><i class="fas fa-tshirt"></i> Product</a></li>
+                    <li><a href="about.html"><i class="fas fa-users"></i> About</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count" id="cartCount">0</span></a></li>
+                    <li><a href="admin.html" class="admin-link"><i class="fas fa-cog"></i> Admin</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h2 class="hero-title fade-up">Elevate Your Style</h2>
-                <h1 class="hero-main fade-up" style="animation-delay: 0.2s;">Premium Luxury <span class="gold-text">T-Shirts</span></h1>
-                <p class="hero-subtitle fade-up" style="animation-delay: 0.4s;">Experience unparalleled comfort, quality, and sophistication with our exclusive 2025 collection</p>
-                <div class="hero-buttons fade-up" style="animation-delay: 0.6s;">
-                    <a href="shop.html" class="btn btn-primary">Shop Now</a>
-                    <a href="about.html" class="btn btn-secondary">Discover Our Story</a>
+                <h2 class="hero-title">Elevate Your Style</h2>
+                <p class="hero-subtitle">Exclusive Luxury Fashion Collection 2025</p>
+                <p class="hero-text">Timeless elegance meets contemporary design in our curated collection of premium apparel and accessories.</p>
+                <a href="shop.html" class="btn-hero">Explore Collection</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products (Empty Grid) -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Collection</h2>
+                <p>Curated selection of our premium offerings</p>
+            </div>
+            
+            <div class="products-grid" id="featuredProductsGrid">
+                <!-- Products will be loaded dynamically from Firebase -->
+                <div class="empty-products-message">
+                    <i class="fas fa-box-open"></i>
+                    <h3>No Products Available</h3>
+                    <p>Products will appear here once added via the Admin Panel</p>
+                    <a href="admin.html" class="btn-admin-access">Go to Admin Panel</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Products Section -->
-    <main class="main-content">
-        <section class="featured-products">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Featured Collection</h2>
-                    <p class="section-subtitle">Our best-selling premium t-shirts</p>
-                </div>
-                
-                <div class="products-grid">
-                    <!-- Product 1 -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1480" alt="Premium Black Cotton T-Shirt with Solo Wear logo" loading="lazy">
-                            <div class="product-badge">Bestseller</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Midnight Classic</h3>
-                            <p class="product-description">Premium 100% Egyptian cotton t-shirt with minimalist design</p>
-                            <div class="product-price">
-                                <span class="current-price">₨ 4,999</span>
-                            </div>
-                            <a href="product.html?id=1" class="btn btn-small">View Details</a>
-                        </div>
-                    </article>
-                    
-                    <!-- Product 2 -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?q=80&w=1374" alt="Luxury White T-Shirt with gold accent details" loading="lazy">
-                            <div class="product-badge">New Arrival</div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Alabaster Premium</h3>
-                            <p class="product-description">Luxury white tee with gold-accented collar trim</p>
-                            <div class="product-price">
-                                <span class="current-price">₨ 5,499</span>
-                            </div>
-                            <a href="product.html?id=2" class="btn btn-small">View Details</a>
-                        </div>
-                    </article>
-                    
-                    <!-- Product 3 -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1515" alt="Navy Blue luxury t-shirt with premium stitching" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Navy Elegance</h3>
-                            <p class="product-description">Deep navy t-shirt with reinforced premium stitching</p>
-                            <div class="product-price">
-                                <span class="current-price">₨ 4,799</span>
-                            </div>
-                            <a href="product.html?id=3" class="btn btn-small">View Details</a>
-                        </div>
-                    </article>
-                </div>
-                
-                <div class="section-footer">
-                    <a href="shop.html" class="btn btn-secondary">View All Products</a>
-                </div>
+    <!-- Brand Story -->
+    <section class="brand-story">
+        <div class="container">
+            <div class="brand-story-content">
+                <h2>The Solo Wear Ethos</h2>
+                <p>Founded on principles of exceptional craftsmanship, sustainable sourcing, and timeless design, Solo Wear represents the pinnacle of luxury fashion for the modern individual.</p>
+                <p>Each piece in our collection is meticulously crafted using only the finest materials, with attention to detail that sets a new standard in the industry.</p>
+                <a href="about.html" class="btn-brand">Our Story</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Brand Story Section -->
-        <section class="brand-story">
-            <div class="container">
-                <div class="story-content">
-                    <div class="story-text">
-                        <h2 class="section-title">The Solo Wear Ethos</h2>
-                        <p>Founded on the principles of quality, sophistication, and timeless style, Solo Wear represents the pinnacle of luxury fashion in Pakistan. Each garment is meticulously crafted using only the finest materials, ensuring an unparalleled wearing experience.</p>
-                        <p>Our commitment to excellence extends beyond our products to every aspect of our service, from personalized customer care to sustainable packaging.</p>
-                        <a href="about.html" class="btn btn-primary">Our Story</a>
-                    </div>
-                    <div class="story-image">
-                        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1470" alt="Solo Wear premium fabric quality and craftsmanship" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/923121399449" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Contact Us</span>
+    </a>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <h3><span class="logo-highlight">SOLO</span> WEAR</h3>
-                        <p>Luxury Redefined</p>
-                    </div>
-                    <p class="footer-about">Pakistan's premier luxury fashion destination, offering premium quality t-shirts and menswear with unparalleled craftsmanship.</p>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://wa.me/923121399449" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SOLO WEAR</h3>
+                    <p class="footer-text">Luxury fashion redefined for the discerning individual. Experience unparalleled quality and design.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
                     </div>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="shop.html">Shop</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="admin.html">Admin</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-col">
+                    <h4>Customer Service</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Shipping Information</a></li>
+                        <li><a href="contact.html">Size Guide</a></li>
+                        <li><a href="contact.html">Care Instructions</a></li>
+                        <li><a href="contact.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
                     <h4>Contact Info</h4>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-user"></i> Owner: Mohammed Abdullah</li>
+                    <ul class="footer-contact">
                         <li><i class="fas fa-phone"></i> +92 312 1399449</li>
-                        <li><i class="fas fa-user"></i> Developer: Ahmed Raza</li>
-                        <li><i class="fas fa-phone"></i> 03093238209</li>
                         <li><i class="fas fa-envelope"></i> info@solowear.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Luxury Fashion District, Karachi, Pakistan</li>
                     </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Policy</h4>
-                    <p class="policy-notice"><strong>No Returns / All Sales Final</strong></p>
-                    <p>Due to the premium nature of our products, all sales are final. We do not accept returns or exchanges unless the item arrives damaged or defective.</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Solo Wear. All rights reserved. | Luxury Fashion Pakistan</p>
+                <p>&copy; 2025 Solo Wear Luxury Fashion Brand. All rights reserved. | <span class="no-returns">No Returns / All Sales Final</span></p>
             </div>
         </div>
     </footer>
 
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
