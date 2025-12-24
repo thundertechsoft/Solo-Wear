@@ -3,271 +3,436 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solo Wear | Admin Panel</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Advanced SEO Meta Tags -->
+    <title>Admin Panel | Solo Wear Luxury Fashion Management</title>
+    <meta name="description" content="Secure admin panel for Solo Wear management. Access product management, orders, and store analytics.">
+    <meta name="keywords" content="Solo Wear admin, store management, product management, admin dashboard">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="Solo Wear">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Admin Panel | Solo Wear Management">
+    <meta property="og:description" content="Secure admin panel for Solo Wear management.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470">
+    <meta property="og:url" content="https://solowear.com/admin.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Styles & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-    <!-- Admin Panel -->
-    <div class="admin-container">
-        <div class="admin-login" id="admin-login">
-            <div class="login-box">
-                <div class="login-header">
-                    <h2><i class="fas fa-lock"></i> Admin Access</h2>
-                    <p>Solo Wear Control Panel</p>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923121399449" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html" aria-label="Solo Wear Home">
+                        <h1><span class="logo-highlight">SOLO</span> WEAR</h1>
+                        <p class="logo-tagline">Luxury Redefined</p>
+                    </a>
                 </div>
-                <div class="login-form">
-                    <div class="form-group">
-                        <label for="pin">Enter Security PIN</label>
-                        <input type="password" id="pin" maxlength="4" placeholder="Enter 4-digit PIN">
-                        <div class="pin-error" id="pin-error"></div>
-                    </div>
-                    <button class="btn btn-primary" id="login-btn">Access Admin Panel</button>
-                    <div class="login-note">
-                        <p><i class="fas fa-info-circle"></i> Use PIN: 4047 to access the admin panel</p>
-                    </div>
-                </div>
+
+                <!-- Navigation -->
+                <nav class="main-nav">
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="admin.html" class="active">Admin</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
-        
-        <div class="admin-panel" id="admin-panel" style="display: none;">
-            <header class="admin-header">
-                <div class="container">
-                    <div class="admin-header-content">
-                        <h1><i class="fas fa-crown"></i> Solo Wear Admin</h1>
-                        <button class="btn btn-outline" id="logout-btn">
-                            <i class="fas fa-sign-out-alt"></i> Logout
-                        </button>
-                    </div>
-                </div>
-            </header>
-            
-            <main class="admin-main container">
-                <div class="admin-grid">
-                    <div class="admin-sidebar">
-                        <nav class="admin-nav">
-                            <ul>
-                                <li><a href="#dashboard" class="active" data-tab="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                                <li><a href="#add-product" data-tab="add-product"><i class="fas fa-plus-circle"></i> Add Product</a></li>
-                                <li><a href="#manage-products" data-tab="manage-products"><i class="fas fa-boxes"></i> Manage Products</a></li>
-                                <li><a href="#orders" data-tab="orders"><i class="fas fa-shopping-cart"></i> Orders</a></li>
-                                <li><a href="#settings" data-tab="settings"><i class="fas fa-cog"></i> Settings</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    
-                    <div class="admin-content">
-                        <!-- Dashboard Tab -->
-                        <div class="admin-tab active" id="dashboard-tab">
-                            <h2><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
-                            <div class="dashboard-cards">
-                                <div class="dashboard-card">
-                                    <div class="card-icon">
-                                        <i class="fas fa-box"></i>
-                                    </div>
-                                    <div class="card-content">
-                                        <h3 id="total-products">0</h3>
-                                        <p>Total Products</p>
-                                    </div>
-                                </div>
-                                <div class="dashboard-card">
-                                    <div class="card-icon">
-                                        <i class="fas fa-shopping-cart"></i>
-                                    </div>
-                                    <div class="card-content">
-                                        <h3 id="total-orders">0</h3>
-                                        <p>Total Orders</p>
-                                    </div>
-                                </div>
-                                <div class="dashboard-card">
-                                    <div class="card-icon">
-                                        <i class="fas fa-money-bill-wave"></i>
-                                    </div>
-                                    <div class="card-content">
-                                        <h3 id="total-revenue">PKR 0</h3>
-                                        <p>Total Revenue</p>
-                                    </div>
-                                </div>
+    </header>
+
+    <!-- Admin Section -->
+    <main class="main-content">
+        <section class="admin-section">
+            <div class="container">
+                <!-- Security PIN Entry -->
+                <div class="admin-login" id="adminLogin">
+                    <div class="login-container">
+                        <div class="login-header">
+                            <h2><i class="fas fa-lock"></i> Admin Access</h2>
+                            <p>Enter security PIN to access the admin panel</p>
+                        </div>
+                        
+                        <div class="login-form">
+                            <div class="form-group">
+                                <label for="adminPin">6-Digit Security PIN</label>
+                                <input type="password" id="adminPin" maxlength="6" placeholder="Enter 6-digit PIN" autocomplete="off">
+                                <div class="pin-hint">Enter the 6-digit PIN provided by system administrator</div>
                             </div>
                             
-                            <div class="recent-activity">
-                                <h3>Recent Activity</h3>
-                                <div class="activity-list" id="activity-list">
-                                    <div class="activity-item">
-                                        <i class="fas fa-info-circle"></i>
-                                        <p>Welcome to the Solo Wear Admin Panel. Add your first product to get started.</p>
-                                        <span>Just now</span>
-                                    </div>
-                                </div>
+                            <button id="loginBtn" class="btn btn-primary">
+                                <i class="fas fa-sign-in-alt"></i> Access Admin Panel
+                            </button>
+                            
+                            <div class="login-note">
+                                <p><i class="fas fa-info-circle"></i> This area is restricted to authorized personnel only.</p>
+                                <p>For assistance, contact Mohammed Abdullah (+92 312 1399449) or Ahmed Raza (03093238209)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Admin Dashboard (Hidden until PIN is verified) -->
+                <div class="admin-dashboard" id="adminDashboard" style="display: none;">
+                    <div class="dashboard-header">
+                        <h1><i class="fas fa-cogs"></i> Solo Wear Admin Dashboard</h1>
+                        <div class="admin-info">
+                            <span>Welcome, Administrator</span>
+                            <button id="logoutBtn" class="btn btn-small">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats Overview -->
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>Total Products</h3>
+                                <p class="stat-value">24</p>
                             </div>
                         </div>
                         
-                        <!-- Add Product Tab -->
-                        <div class="admin-tab" id="add-product-tab">
-                            <h2><i class="fas fa-plus-circle"></i> Add New Product</h2>
-                            <form id="add-product-form">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>Orders Today</h3>
+                                <p class="stat-value">7</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>Total Customers</h3>
+                                <p class="stat-value">142</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>Revenue</h3>
+                                <p class="stat-value">₨ 324,850</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Management -->
+                    <div class="dashboard-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-box-open"></i> Product Management</h2>
+                            <button class="btn btn-small" id="addProductBtn">
+                                <i class="fas fa-plus"></i> Add New Product
+                            </button>
+                        </div>
+                        
+                        <!-- Product Form -->
+                        <div class="product-form" id="productForm">
+                            <h3>Add/Edit Product</h3>
+                            <form id="adminProductForm">
                                 <div class="form-row">
                                     <div class="form-group">
-                                        <label for="product-name">Product Name *</label>
-                                        <input type="text" id="product-name" required>
+                                        <label for="productName">Product Name *</label>
+                                        <input type="text" id="productName" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="product-category">Category *</label>
-                                        <select id="product-category" required>
+                                        <label for="productCategory">Category *</label>
+                                        <select id="productCategory" required>
                                             <option value="">Select Category</option>
-                                            <option value="t-shirt">T-Shirts</option>
-                                            <option value="shirt">Shirts</option>
-                                            <option value="jacket">Jackets</option>
-                                            <option value="pants">Pants</option>
-                                            <option value="accessory">Accessories</option>
+                                            <option value="premium-t-shirts">Premium T-Shirts</option>
+                                            <option value="luxury-polo">Luxury Polo</option>
+                                            <option value="casual-wear">Casual Wear</option>
+                                            <option value="limited-edition">Limited Edition</option>
                                         </select>
                                     </div>
                                 </div>
                                 
-                                <div class="form-group">
-                                    <label for="product-image">Image URL *</label>
-                                    <input type="url" id="product-image" placeholder="https://example.com/image.jpg" required>
-                                    <div class="form-note">Direct link to high-quality product image</div>
-                                    <div class="image-preview">
-                                        <img id="image-preview" src="" alt="Image preview" onerror="this.style.display='none'">
-                                    </div>
-                                </div>
-                                
                                 <div class="form-row">
                                     <div class="form-group">
-                                        <label for="product-price">Price (PKR) *</label>
-                                        <input type="number" id="product-price" min="0" step="100" required>
+                                        <label for="productPrice">Price (PKR) *</label>
+                                        <input type="number" id="productPrice" min="0" step="100" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="product-shipping">Shipping Fee (PKR) *</label>
-                                        <input type="number" id="product-shipping" min="0" step="50" value="200" required>
-                                        <div class="form-note">This will be added to cart total</div>
+                                        <label for="shippingCost">Shipping Cost (PKR) *</label>
+                                        <input type="number" id="shippingCost" min="0" step="50" required>
                                     </div>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for="product-description">Description *</label>
-                                    <textarea id="product-description" rows="5" required placeholder="Describe the product features, materials, and craftsmanship..."></textarea>
+                                    <label for="productImage">Image URL *</label>
+                                    <input type="url" id="productImage" placeholder="https://example.com/image.jpg" required>
+                                    <div class="form-hint">Use high-quality image URLs from Unsplash or similar services</div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="productDescription">Description *</label>
+                                    <textarea id="productDescription" rows="4" required></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="productInventory">Inventory Quantity</label>
+                                    <input type="number" id="productInventory" min="0" value="10">
                                 </div>
                                 
                                 <div class="form-actions">
                                     <button type="submit" class="btn btn-primary">
-                                        <i class="fas fa-upload"></i> Add Product
+                                        <i class="fas fa-save"></i> Save Product
                                     </button>
-                                    <button type="reset" class="btn btn-outline">
-                                        <i class="fas fa-redo"></i> Reset Form
+                                    <button type="button" class="btn btn-secondary" id="cancelProductBtn">
+                                        Cancel
                                     </button>
                                 </div>
-                                
-                                <div class="form-status" id="form-status"></div>
                             </form>
                         </div>
                         
-                        <!-- Manage Products Tab -->
-                        <div class="admin-tab" id="manage-products-tab">
-                            <h2><i class="fas fa-boxes"></i> Manage Products</h2>
-                            <div class="products-table-container">
-                                <table class="products-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Image</th>
-                                            <th>Name</th>
-                                            <th>Category</th>
-                                            <th>Price</th>
-                                            <th>Shipping</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="products-table-body">
-                                        <!-- Products loaded via JavaScript -->
-                                    </tbody>
-                                </table>
+                        <!-- Products Table -->
+                        <div class="table-container">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Product</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Shipping</th>
+                                        <th>Inventory</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productsTable">
+                                    <!-- Products will be loaded here via JavaScript -->
+                                    <tr>
+                                        <td>SW001</td>
+                                        <td>
+                                            <div class="table-product">
+                                                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1480" alt="Midnight Classic">
+                                                <span>Midnight Classic</span>
+                                            </div>
+                                        </td>
+                                        <td>Premium T-Shirts</td>
+                                        <td>₨ 4,999</td>
+                                        <td>₨ 300</td>
+                                        <td>24</td>
+                                        <td>
+                                            <button class="btn-icon edit" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-icon delete" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>SW002</td>
+                                        <td>
+                                            <div class="table-product">
+                                                <img src="https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?q=80&w=1374" alt="Alabaster Premium">
+                                                <span>Alabaster Premium</span>
+                                            </div>
+                                        </td>
+                                        <td>Premium T-Shirts</td>
+                                        <td>₨ 5,499</td>
+                                        <td>₨ 300</td>
+                                        <td>18</td>
+                                        <td>
+                                            <button class="btn-icon edit" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-icon delete" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Order Management -->
+                    <div class="dashboard-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-clipboard-list"></i> Recent Orders</h2>
+                            <button class="btn btn-small">
+                                <i class="fas fa-download"></i> Export Orders
+                            </button>
+                        </div>
+                        
+                        <div class="table-container">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>SW-2025-8472</td>
+                                        <td>Ali Ahmed</td>
+                                        <td>2025-03-15</td>
+                                        <td>₨ 16,197</td>
+                                        <td><span class="status delivered">Delivered</span></td>
+                                        <td>
+                                            <button class="btn-icon view" title="View Details">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>SW-2025-8471</td>
+                                        <td>Bilal Khan</td>
+                                        <td>2025-03-14</td>
+                                        <td>₨ 5,299</td>
+                                        <td><span class="status shipped">Shipped</span></td>
+                                        <td>
+                                            <button class="btn-icon view" title="View Details">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>SW-2025-8470</td>
+                                        <td>Chaudhry Usman</td>
+                                        <td>2025-03-13</td>
+                                        <td>₨ 10,598</td>
+                                        <td><span class="status processing">Processing</span></td>
+                                        <td>
+                                            <button class="btn-icon view" title="View Details">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Firebase Data Section -->
+                    <div class="dashboard-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-database"></i> Firebase Data Management</h2>
+                            <div class="firebase-status">
+                                <span class="status connected"><i class="fas fa-circle"></i> Connected</span>
                             </div>
                         </div>
                         
-                        <!-- Orders Tab -->
-                        <div class="admin-tab" id="orders-tab">
-                            <h2><i class="fas fa-shopping-cart"></i> Orders</h2>
-                            <div class="orders-table-container">
-                                <table class="orders-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Order ID</th>
-                                            <th>Customer</th>
-                                            <th>Date</th>
-                                            <th>Items</th>
-                                            <th>Total</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="orders-table-body">
-                                        <tr>
-                                            <td colspan="6" class="no-data">No orders yet</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div class="firebase-controls">
+                            <div class="control-group">
+                                <h4>Real-time Updates</h4>
+                                <p>All product data is synced with Firebase in real-time. Changes made here will reflect immediately on the live website.</p>
                             </div>
-                        </div>
-                        
-                        <!-- Settings Tab -->
-                        <div class="admin-tab" id="settings-tab">
-                            <h2><i class="fas fa-cog"></i> Settings</h2>
-                            <div class="settings-form">
-                                <div class="setting-group">
-                                    <h3>Shipping Settings</h3>
-                                    <div class="form-group">
-                                        <label for="default-shipping">Default Shipping Fee (PKR)</label>
-                                        <input type="number" id="default-shipping" value="200" min="0" step="50">
-                                        <div class="form-note">Default shipping fee for new products</div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="free-shipping-threshold">Free Shipping Threshold (PKR)</label>
-                                        <input type="number" id="free-shipping-threshold" value="15000" min="0" step="1000">
-                                        <div class="form-note">Order total required for free shipping</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="setting-group">
-                                    <h3>Store Information</h3>
-                                    <div class="form-group">
-                                        <label for="store-phone">Store Phone</label>
-                                        <input type="text" id="store-phone" value="+92 312 1399449">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="store-email">Store Email</label>
-                                        <input type="email" id="store-email" value="info@solowear.com">
-                                    </div>
-                                </div>
-                                
-                                <div class="setting-group">
-                                    <h3>Policy Settings</h3>
-                                    <div class="form-group">
-                                        <div class="checkbox-group">
-                                            <input type="checkbox" id="no-returns-policy" checked disabled>
-                                            <label for="no-returns-policy">No Returns or Exchanges Policy (Always Enabled)</label>
-                                        </div>
-                                        <div class="form-note">This policy cannot be disabled as per brand guidelines</div>
-                                    </div>
-                                </div>
-                                
-                                <button class="btn btn-primary" id="save-settings">
-                                    <i class="fas fa-save"></i> Save Settings
+                            
+                            <div class="control-group">
+                                <h4>Data Backup</h4>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-file-export"></i> Export Database
                                 </button>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-file-import"></i> Import Database
+                                </button>
+                            </div>
+                            
+                            <div class="control-group">
+                                <h4>System Info</h4>
+                                <div class="system-info">
+                                    <p><strong>Admin Access:</strong> Mohammed Abdullah, Ahmed Raza</p>
+                                    <p><strong>Last Updated:</strong> 2025-03-15 14:30</p>
+                                    <p><strong>Firebase Project:</strong> trustsell-78c18</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </main>
-        </div>
-    </div>
+            </div>
+        </section>
+    </main>
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/923121399449" class="whatsapp-btn" target="_blank" aria-label="Contact us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3><span class="logo-highlight">SOLO</span> WEAR</h3>
+                        <p>Luxury Redefined</p>
+                    </div>
+                    <p class="footer-about">Pakistan's premier luxury fashion destination, offering premium quality t-shirts and menswear with unparalleled craftsmanship.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/923121399449" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="admin.html">Admin</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-user"></i> Owner: Mohammed Abdullah</li>
+                        <li><i class="fas fa-phone"></i> +92 312 1399449</li>
+                        <li><i class="fas fa-user"></i> Developer: Ahmed Raza</li>
+                        <li><i class="fas fa-phone"></i> 03093238209</li>
+                        <li><i class="fas fa-envelope"></i> info@solowear.com</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Policy</h4>
+                    <p class="policy-notice"><strong>No Returns / All Sales Final</strong></p>
+                    <p>Due to the premium nature of our products, all sales are final. We do not accept returns or exchanges unless the item arrives damaged or defective.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Solo Wear. All rights reserved. | Luxury Fashion Pakistan</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
