@@ -3,253 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Advanced SEO Meta Tags -->
-    <title>About Solo Wear | Pakistan's Premier Luxury Fashion Brand</title>
-    <meta name="description" content="Discover the story behind Solo Wear, Pakistan's #1 luxury fashion brand. Meet our founders Mohammed Abdullah and Ahmed Raza, and learn about our commitment to premium quality.">
-    <meta name="keywords" content="Solo Wear about us, luxury fashion Pakistan, premium t-shirt brand, Mohammed Abdullah, Ahmed Raza, fashion brand story">
-    <meta name="robots" content="index, follow">
+    <title>About Us | Solo Wear Luxury Fashion Brand</title>
+    <meta name="description" content="Learn about Solo Wear's story, our team, and our commitment to luxury fashion craftsmanship and sustainable practices.">
+    <meta name="keywords" content="about Solo Wear, fashion brand story, luxury craftsmanship, sustainable fashion">
     <meta name="author" content="Solo Wear">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="About Solo Wear | Pakistan's Premier Luxury Fashion Brand">
-    <meta property="og:description" content="Discover the story behind Solo Wear, Pakistan's #1 luxury fashion brand.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1470">
-    <meta property="og:url" content="https://solowear.com/about.html">
+    <meta property="og:title" content="About Us | Solo Wear Luxury Fashion Brand">
+    <meta property="og:description" content="Our story, team, and commitment to luxury fashion">
     <meta property="og:type" content="website">
-    
-    <!-- Styles & Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta property="og:url" content="https://solowear.com/about.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Solo Wear",
+        "description": "Information about Solo Wear luxury fashion brand",
+        "url": "https://solowear.com/about.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Solo Wear"
+        }
+    }
+    </script>
 </head>
 <body>
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/923121399449" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- Admin Login Overlay -->
+    <div id="adminOverlay" class="admin-overlay">
+        <div class="admin-login-container">
+            <div class="admin-login-box">
+                <h2><i class="fas fa-lock"></i> Admin Access</h2>
+                <p class="admin-instruction">Enter PIN to access admin dashboard</p>
+                <div class="admin-input-group">
+                    <input type="password" id="adminPin" placeholder="Enter 6-digit PIN" maxlength="6">
+                    <button id="adminLoginBtn" class="btn-admin-login">Login</button>
+                </div>
+                <button id="adminCloseBtn" class="btn-admin-close"><i class="fas fa-times"></i></button>
+                <p class="admin-error" id="adminError"></p>
+            </div>
+        </div>
+    </div>
 
-    <!-- Header Section -->
+    <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="header-content">
-                <!-- Logo -->
-                <div class="logo">
-                    <a href="index.html" aria-label="Solo Wear Home">
-                        <h1><span class="logo-highlight">SOLO</span> WEAR</h1>
-                        <p class="logo-tagline">Luxury Redefined</p>
-                    </a>
-                </div>
-
-                <!-- Navigation -->
-                <nav class="main-nav">
-                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <ul class="nav-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="about.html" class="active">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="cart.html" class="cart-icon-link">
-                            <i class="fas fa-shopping-bag"></i>
-                            <span class="cart-count">0</span>
-                        </a></li>
-                    </ul>
-                </nav>
+            <div class="logo">
+                <h1><span class="logo-highlight">SOLO</span> WEAR</h1>
+                <p class="logo-subtitle">LUXURY FASHION 2025</p>
             </div>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="shop.html"><i class="fas fa-shopping-bag"></i> Shop</a></li>
+                    <li><a href="product.html"><i class="fas fa-tshirt"></i> Product</a></li>
+                    <li><a href="about.html" class="active"><i class="fas fa-users"></i> About</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count" id="cartCount">0</span></a></li>
+                    <li><a href="admin.html" class="admin-link"><i class="fas fa-cog"></i> Admin</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Page Header -->
+    <!-- About Header -->
     <section class="page-header">
         <div class="container">
-            <h1 class="page-title">Our Story</h1>
-            <p class="page-subtitle">Redefining Luxury Fashion in Pakistan</p>
+            <h1>Our Story</h1>
+            <p>Crafting luxury fashion with purpose and precision</p>
         </div>
     </section>
 
-    <!-- About Content -->
-    <main class="main-content">
-        <!-- Brand Story Section -->
-        <section class="about-story">
-            <div class="container">
-                <div class="story-content">
-                    <div class="story-text">
-                        <h2 class="section-title">The Solo Wear Vision</h2>
-                        <p>Founded in 2023, Solo Wear emerged from a simple yet powerful idea: to create premium luxury fashion that combines exceptional quality with timeless design. In a market saturated with fast fashion, we recognized the need for garments that prioritize craftsmanship, sustainability, and enduring style.</p>
-                        <p>Our journey began with a commitment to using only the finest materials and implementing meticulous attention to detail in every stitch. Today, Solo Wear stands as Pakistan's premier luxury fashion brand, celebrated for our premium t-shirts and menswear collections that redefine sophistication.</p>
-                        <p>Every Solo Wear garment tells a story of dedication – from the careful selection of 100% Egyptian cotton to the final quality inspection before reaching our customers. We believe that true luxury lies not just in appearance, but in the experience of wearing something truly exceptional.</p>
-                    </div>
-                    <div class="story-image">
-                        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1470" alt="Solo Wear premium fabric and quality control process" loading="lazy">
-                    </div>
+    <!-- Brand Story -->
+    <section class="about-story">
+        <div class="container">
+            <div class="about-story-container">
+                <div class="about-story-content">
+                    <h2>The Solo Wear Vision</h2>
+                    <p>Founded in 2020, Solo Wear emerged from a simple yet powerful idea: luxury fashion should be both exquisite and meaningful. We believe that what you wear should reflect not just your style, but your values and aspirations.</p>
+                    <p>Our journey began with a commitment to redefine luxury by combining timeless design with sustainable practices and uncompromising quality. Every piece in our collection is meticulously crafted, with attention to detail that honors both traditional craftsmanship and contemporary innovation.</p>
+                    <p>At Solo Wear, we don't just create clothing—we create experiences. Each garment is designed to make the wearer feel confident, empowered, and authentically themselves. Our collections are curated for individuals who appreciate the finer things in life but seek substance behind the style.</p>
+                </div>
+                <div class="about-story-image">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Solo Wear craftsmanship">
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Values Section -->
-        <section class="values-section">
-            <div class="container">
-                <h2 class="section-title text-center">Our Core Values</h2>
-                <div class="values-grid">
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <i class="fas fa-gem"></i>
-                        </div>
-                        <h3>Premium Quality</h3>
-                        <p>We never compromise on materials or craftsmanship. Every garment is made from the finest fabrics with meticulous attention to detail.</p>
-                    </div>
-                    
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <i class="fas fa-leaf"></i>
-                        </div>
-                        <h3>Sustainability</h3>
-                        <p>We prioritize ethical sourcing and sustainable practices, ensuring our fashion has minimal environmental impact.</p>
-                    </div>
-                    
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3>Customer Excellence</h3>
-                        <p>Our relationship with customers extends beyond the purchase. We provide personalized service and ongoing support.</p>
-                    </div>
-                    
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h3>Innovation</h3>
-                        <p>We continuously evolve our designs and processes to stay at the forefront of luxury fashion innovation.</p>
-                    </div>
-                </div>
+    <!-- Values -->
+    <section class="about-values">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide everything we do</p>
             </div>
-        </section>
-
-        <!-- Team Section -->
-        <section class="team-section">
-            <div class="container">
-                <h2 class="section-title text-center">Meet Our Team</h2>
-                <p class="section-subtitle text-center">The passionate individuals behind Solo Wear's success</p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Quality Craftsmanship</h3>
+                    <p>Every stitch, seam, and detail is executed with precision using only the finest materials sourced from ethical suppliers.</p>
+                </div>
                 
-                <div class="team-grid">
-                    <!-- Team Member 1 -->
-                    <article class="team-card">
-                        <div class="team-image">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1374" alt="Mohammed Abdullah, Owner of Solo Wear" loading="lazy">
-                        </div>
-                        <div class="team-info">
-                            <h3>Mohammed Abdullah</h3>
-                            <p class="team-role">Founder & CEO</p>
-                            <p class="team-bio">With over 10 years of experience in the fashion industry, Mohammed founded Solo Wear with a vision to elevate Pakistani menswear to international luxury standards.</p>
-                            <div class="team-contact">
-                                <p><i class="fas fa-phone"></i> +92 312 1399449</p>
-                                <p><i class="fas fa-envelope"></i> abdullah@solowear.com</p>
-                            </div>
-                            <div class="team-social">
-                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="https://wa.me/923121399449" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Team Member 2 -->
-                    <article class="team-card">
-                        <div class="team-image">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1374" alt="Ahmed Raza, Developer of Solo Wear" loading="lazy">
-                        </div>
-                        <div class="team-info">
-                            <h3>Ahmed Raza</h3>
-                            <p class="team-role">Lead Developer & Technical Director</p>
-                            <p class="team-bio">Ahmed brings technical excellence to Solo Wear, overseeing our digital presence and e-commerce platform to ensure a seamless customer experience.</p>
-                            <div class="team-contact">
-                                <p><i class="fas fa-phone"></i> 03093238209</p>
-                                <p><i class="fas fa-envelope"></i> ahmed@solowear.com</p>
-                            </div>
-                            <div class="team-social">
-                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            </div>
-                        </div>
-                    </article>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainable Practices</h3>
+                    <p>We are committed to reducing our environmental impact through responsible sourcing, production, and packaging.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Timeless Design</h3>
+                    <p>Our collections focus on enduring style rather than fleeting trends, creating pieces that remain relevant season after season.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Ethical Partnerships</h3>
+                    <p>We work exclusively with artisans and manufacturers who share our commitment to fair wages and safe working conditions.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- WhatsApp Group CTA -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>Join Our Exclusive Community</h2>
-                    <p>Be the first to know about new collections, exclusive offers, and fashion insights. Join our WhatsApp group for VIP access.</p>
-                    <a href="https://chat.whatsapp.com/invite/SoloWearVIP" class="btn btn-primary" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Join WhatsApp Group
-                    </a>
+    <!-- Team Section -->
+    <section class="about-team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Leadership</h2>
+                <p>The visionaries behind Solo Wear</p>
+            </div>
+            
+            <div class="team-grid">
+                <!-- Team Member 1: Owner -->
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Mohammed Abdullah">
+                    </div>
+                    <div class="team-info">
+                        <h3>Mohammed Abdullah</h3>
+                        <p class="team-role">Founder & Owner</p>
+                        <p class="team-description">With over 15 years in the luxury fashion industry, Mohammed founded Solo Wear to create a brand that combines his passion for exquisite design with his commitment to ethical business practices.</p>
+                        <div class="team-contact">
+                            <p><i class="fas fa-phone"></i> +92 312 1399449</p>
+                            <p><i class="fas fa-envelope"></i> mohammed@solowear.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2: Developer -->
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Ahmed Raza">
+                    </div>
+                    <div class="team-info">
+                        <h3>Ahmed Raza</h3>
+                        <p class="team-role">Lead Developer & Tech Director</p>
+                        <p class="team-description">Ahmed brings innovative digital solutions to Solo Wear, ensuring our online presence matches the excellence of our physical products. He oversees all technical aspects of the brand.</p>
+                        <div class="team-contact">
+                            <p><i class="fas fa-phone"></i> 03093238209</p>
+                            <p><i class="fas fa-envelope"></i> ahmed@solowear.com</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/923121399449" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Contact Us</span>
+    </a>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <h3><span class="logo-highlight">SOLO</span> WEAR</h3>
-                        <p>Luxury Redefined</p>
-                    </div>
-                    <p class="footer-about">Pakistan's premier luxury fashion destination, offering premium quality t-shirts and menswear with unparalleled craftsmanship.</p>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://wa.me/923121399449" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SOLO WEAR</h3>
+                    <p class="footer-text">Luxury fashion redefined for the discerning individual. Experience unparalleled quality and design.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
                     </div>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="shop.html">Shop</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="admin.html">Admin</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-col">
+                    <h4>Customer Service</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Shipping Information</a></li>
+                        <li><a href="contact.html">Size Guide</a></li>
+                        <li><a href="contact.html">Care Instructions</a></li>
+                        <li><a href="contact.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
                     <h4>Contact Info</h4>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-user"></i> Owner: Mohammed Abdullah</li>
+                    <ul class="footer-contact">
                         <li><i class="fas fa-phone"></i> +92 312 1399449</li>
-                        <li><i class="fas fa-user"></i> Developer: Ahmed Raza</li>
-                        <li><i class="fas fa-phone"></i> 03093238209</li>
                         <li><i class="fas fa-envelope"></i> info@solowear.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Luxury Fashion District, Karachi, Pakistan</li>
                     </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Policy</h4>
-                    <p class="policy-notice"><strong>No Returns / All Sales Final</strong></p>
-                    <p>Due to the premium nature of our products, all sales are final. We do not accept returns or exchanges unless the item arrives damaged or defective.</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Solo Wear. All rights reserved. | Luxury Fashion Pakistan</p>
+                <p>&copy; 2025 Solo Wear Luxury Fashion Brand. All rights reserved. | <span class="no-returns">No Returns / All Sales Final</span></p>
             </div>
         </div>
     </footer>
 
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
