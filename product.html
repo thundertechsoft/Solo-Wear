@@ -3,337 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Advanced SEO Meta Tags -->
-    <title>Midnight Classic - Premium Luxury T-Shirt | Solo Wear Pakistan</title>
-    <meta name="description" content="Midnight Classic premium luxury t-shirt by Solo Wear. Made from 100% Egyptian cotton with minimalist design. Experience ultimate comfort and style.">
-    <meta name="keywords" content="premium t-shirt Pakistan, luxury cotton t-shirt, Solo Wear midnight classic, buy designer t-shirts online, high quality menswear">
-    <meta name="robots" content="index, follow">
+    <title>Product Detail | Solo Wear Luxury Fashion</title>
+    <meta name="description" content="View detailed information about Solo Wear luxury fashion products. Premium materials, craftsmanship, and design details.">
+    <meta name="keywords" content="product detail, luxury product, premium materials, fashion details">
     <meta name="author" content="Solo Wear">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Midnight Classic - Premium Luxury T-Shirt | Solo Wear">
-    <meta property="og:description" content="Midnight Classic premium luxury t-shirt by Solo Wear. Made from 100% Egyptian cotton.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1480">
+    <meta property="og:title" content="Product Detail | Solo Wear Luxury Fashion">
+    <meta property="og:description" content="Detailed view of our luxury fashion product">
+    <meta property="og:type" content="product.item">
     <meta property="og:url" content="https://solowear.com/product.html">
-    <meta property="og:type" content="product">
-    
-    <!-- Product Schema Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Midnight Classic Premium T-Shirt",
-        "description": "Premium 100% Egyptian cotton t-shirt with minimalist design by Solo Wear",
-        "brand": {
-            "@type": "Brand",
-            "name": "Solo Wear"
-        },
-        "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1480",
-        "sku": "SW-MC-001",
-        "offers": {
-            "@type": "Offer",
-            "url": "https://solowear.com/product.html",
-            "priceCurrency": "PKR",
-            "price": "4999",
-            "availability": "https://schema.org/InStock",
-            "seller": {
-                "@type": "Organization",
-                "name": "Solo Wear"
-            }
-        },
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "4.9",
-                "bestRating": "5"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Ahmed Raza"
-            }
-        }
-    }
-    </script>
-    
-    <!-- Styles & Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/923121399449" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- Admin Login Overlay -->
+    <div id="adminOverlay" class="admin-overlay">
+        <div class="admin-login-container">
+            <div class="admin-login-box">
+                <h2><i class="fas fa-lock"></i> Admin Access</h2>
+                <p class="admin-instruction">Enter PIN to access admin dashboard</p>
+                <div class="admin-input-group">
+                    <input type="password" id="adminPin" placeholder="Enter 6-digit PIN" maxlength="6">
+                    <button id="adminLoginBtn" class="btn-admin-login">Login</button>
+                </div>
+                <button id="adminCloseBtn" class="btn-admin-close"><i class="fas fa-times"></i></button>
+                <p class="admin-error" id="adminError"></p>
+            </div>
+        </div>
+    </div>
 
-    <!-- Header Section -->
+    <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="header-content">
-                <!-- Logo -->
-                <div class="logo">
-                    <a href="index.html" aria-label="Solo Wear Home">
-                        <h1><span class="logo-highlight">SOLO</span> WEAR</h1>
-                        <p class="logo-tagline">Luxury Redefined</p>
-                    </a>
-                </div>
-
-                <!-- Navigation -->
-                <nav class="main-nav">
-                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <ul class="nav-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="cart.html" class="cart-icon-link">
-                            <i class="fas fa-shopping-bag"></i>
-                            <span class="cart-count">0</span>
-                        </a></li>
-                    </ul>
-                </nav>
+            <div class="logo">
+                <h1><span class="logo-highlight">SOLO</span> WEAR</h1>
+                <p class="logo-subtitle">LUXURY FASHION 2025</p>
             </div>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="shop.html"><i class="fas fa-shopping-bag"></i> Shop</a></li>
+                    <li><a href="product.html" class="active"><i class="fas fa-tshirt"></i> Product</a></li>
+                    <li><a href="about.html"><i class="fas fa-users"></i> About</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count" id="cartCount">0</span></a></li>
+                    <li><a href="admin.html" class="admin-link"><i class="fas fa-cog"></i> Admin</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Product Detail Section -->
-    <main class="main-content">
-        <section class="product-detail">
-            <div class="container">
-                <!-- Breadcrumb -->
-                <nav class="breadcrumb">
-                    <a href="index.html">Home</a> &gt;
-                    <a href="shop.html">Shop</a> &gt;
-                    <span>Midnight Classic</span>
-                </nav>
+    <!-- Product Detail -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-detail-container">
+                <!-- Product Image -->
+                <div class="product-image-container">
+                    <div class="main-product-image">
+                        <img id="productMainImage" src="https://via.placeholder.com/600x800/1a1a1a/cccccc?text=Product+Image" alt="Product Image" onerror="this.src='https://via.placeholder.com/600x800/1a1a1a/cccccc?text=Image+Not+Available'">
+                    </div>
+                </div>
                 
-                <div class="product-detail-content">
-                    <!-- Product Images -->
-                    <div class="product-images">
-                        <div class="main-product-image">
-                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1480" alt="Midnight Classic premium black t-shirt front view" id="mainImage" loading="lazy">
+                <!-- Product Info -->
+                <div class="product-info-container">
+                    <div class="product-breadcrumb">
+                        <a href="index.html">Home</a> / <a href="shop.html">Shop</a> / <span id="productCategory">Product</span>
+                    </div>
+                    
+                    <h1 id="productTitle">Product Name</h1>
+                    
+                    <div class="product-price-container">
+                        <span class="product-price" id="productPrice">$0.00</span>
+                        <span class="product-compare" id="productComparePrice"></span>
+                    </div>
+                    
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
                         </div>
-                        <div class="product-thumbnails">
-                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1480" alt="Midnight Classic front view" class="thumbnail active" data-image="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1480">
-                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1480" alt="Midnight Classic side view" class="thumbnail" data-image="https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?q=80&w=1374">
-                            <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1515" alt="Midnight Classic back view" class="thumbnail" data-image="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1515">
+                        <span class="rating-text">(4.5/5.0)</span>
+                    </div>
+                    
+                    <p class="product-description" id="productDescription">
+                        Product description will be loaded from Firebase when products are added via the Admin Panel.
+                    </p>
+                    
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Category:</span>
+                            <span class="meta-value" id="productCategoryValue">N/A</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Material:</span>
+                            <span class="meta-value" id="productMaterial">Premium Fabric</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Availability:</span>
+                            <span class="meta-value in-stock" id="productAvailability">In Stock</span>
                         </div>
                     </div>
                     
-                    <!-- Product Info -->
-                    <div class="product-info">
-                        <div class="product-header">
-                            <h1 class="product-title">Midnight Classic</h1>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <span class="rating-text">4.9 (128 reviews)</span>
-                            </div>
+                    <!-- Shipping Display -->
+                    <div class="shipping-display">
+                        <i class="fas fa-shipping-fast"></i>
+                        <div class="shipping-info">
+                            <span class="shipping-label">Shipping Cost:</span>
+                            <span class="shipping-cost" id="shippingCostDisplay">$0.00</span>
+                            <p class="shipping-note">Shipping cost added to cart total at checkout</p>
+                        </div>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus" id="quantityMinus">-</button>
+                            <input type="number" id="productQuantity" value="1" min="1" max="10">
+                            <button class="quantity-btn plus" id="quantityPlus">+</button>
                         </div>
                         
-                        <div class="product-price-section">
-                            <div class="product-price-main">
-                                <span class="current-price">₨ 4,999</span>
-                                <span class="original-price">₨ 6,499</span>
-                                <span class="discount-badge">23% OFF</span>
-                            </div>
-                            <div class="shipping-cost">
-                                <span class="shipping-label">Shipping Cost:</span>
-                                <span class="shipping-price">₨ 300</span>
-                            </div>
-                            <div class="total-price-preview">
-                                <span class="total-label">Total (including shipping):</span>
-                                <span class="total-price">₨ 5,299</span>
-                            </div>
-                        </div>
+                        <button class="btn-add-to-cart" id="addToCartBtn">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
                         
-                        <div class="product-description-full">
-                            <h3>Description</h3>
-                            <p>Experience ultimate luxury with our Midnight Classic premium t-shirt. Crafted from 100% Egyptian cotton, this garment offers unparalleled comfort, breathability, and a flawless drape.</p>
-                            <p>Featuring a minimalist design with subtle Solo Wear branding, the Midnight Classic is the perfect foundation for any sophisticated wardrobe. Reinforced stitching and premium finishing ensure durability and a perfect fit.</p>
-                            
-                            <ul class="product-features">
-                                <li><i class="fas fa-check-circle"></i> 100% Premium Egyptian Cotton</li>
-                                <li><i class="fas fa-check-circle"></i> Reinforced Double Stitching</li>
-                                <li><i class="fas fa-check-circle"></i> Minimalist Design</li>
-                                <li><i class="fas fa-check-circle"></i> Tagless Comfort Collar</li>
-                                <li><i class="fas fa-check-circle"></i> Color-Fast Fabric</li>
-                                <li><i class="fas fa-check-circle"></i> Machine Washable</li>
-                            </ul>
-                        </div>
-                        
-                        <!-- Product Options -->
-                        <div class="product-options">
-                            <div class="option-group">
-                                <label for="size">Size</label>
-                                <select id="size" class="form-select">
-                                    <option value="S">Small</option>
-                                    <option value="M" selected>Medium</option>
-                                    <option value="L">Large</option>
-                                    <option value="XL">Extra Large</option>
-                                    <option value="XXL">XXL</option>
-                                </select>
-                            </div>
-                            
-                            <div class="option-group">
-                                <label for="quantity">Quantity</label>
-                                <div class="quantity-selector">
-                                    <button class="quantity-btn minus" aria-label="Decrease quantity">-</button>
-                                    <input type="number" id="quantity" value="1" min="1" max="10">
-                                    <button class="quantity-btn plus" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Action Buttons -->
-                        <div class="product-actions">
-                            <button class="btn btn-primary add-to-cart" data-product-id="1" data-product-name="Midnight Classic" data-product-price="4999" data-shipping="300">
-                                <i class="fas fa-shopping-bag"></i> Add to Cart
-                            </button>
-                            <button class="btn btn-secondary buy-now">
-                                <i class="fas fa-bolt"></i> Buy Now
-                            </button>
-                        </div>
-                        
-                        <!-- Product Meta -->
-                        <div class="product-meta">
-                            <div class="meta-item">
-                                <i class="fas fa-truck"></i>
-                                <span>Free shipping on orders over ₨ 10,000</span>
-                            </div>
-                            <div class="meta-item">
-                                <i class="fas fa-undo"></i>
-                                <span>No Returns / All Sales Final</span>
-                            </div>
-                            <div class="meta-item">
-                                <i class="fas fa-shield-alt"></i>
-                                <span>Premium Quality Guaranteed</span>
-                            </div>
-                        </div>
+                        <button class="btn-wishlist">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                    </div>
+                    
+                    <div class="product-notice">
+                        <p><i class="fas fa-info-circle"></i> <strong>Note:</strong> This is a sample product page. Actual product details will appear when products are added via the Admin Panel.</p>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <!-- Related Products -->
-        <section class="related-products">
-            <div class="container">
-                <h2 class="section-title">You Might Also Like</h2>
-                <div class="products-grid">
-                    <!-- Related Product 1 -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?q=80&w=1374" alt="Luxury White T-Shirt with gold accent details" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Alabaster Premium</h3>
-                            <p class="product-description">Luxury white tee with gold-accented collar trim</p>
-                            <div class="product-price">
-                                <span class="current-price">₨ 5,499</span>
-                            </div>
-                            <a href="product.html?id=2" class="btn btn-small">View Details</a>
-                        </div>
-                    </article>
-                    
-                    <!-- Related Product 2 -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1515" alt="Navy Blue luxury t-shirt with premium stitching" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Navy Elegance</h3>
-                            <p class="product-description">Deep navy t-shirt with reinforced premium stitching</p>
-                            <div class="product-price">
-                                <span class="current-price">₨ 4,799</span>
-                            </div>
-                            <a href="product.html?id=3" class="btn btn-small">View Details</a>
-                        </div>
-                    </article>
-                    
-                    <!-- Related Product 3 -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=1368" alt="Charcoal gray premium t-shirt with textured fabric" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Charcoal Texture</h3>
-                            <p class="product-description">Textured charcoal gray tee with premium fabric blend</p>
-                            <div class="product-price">
-                                <span class="current-price">₨ 5,199</span>
-                            </div>
-                            <a href="product.html?id=4" class="btn btn-small">View Details</a>
-                        </div>
-                    </article>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products">
+        <div class="container">
+            <div class="section-header">
+                <h2>You May Also Like</h2>
+                <p>Explore similar luxury items</p>
+            </div>
+            
+            <div class="products-grid" id="relatedProductsGrid">
+                <!-- Related products will load here -->
+                <div class="empty-related-message">
+                    <p>Related products will appear here when the main product catalog is populated via Admin Panel.</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/923121399449" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Contact Us</span>
+    </a>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <h3><span class="logo-highlight">SOLO</span> WEAR</h3>
-                        <p>Luxury Redefined</p>
-                    </div>
-                    <p class="footer-about">Pakistan's premier luxury fashion destination, offering premium quality t-shirts and menswear with unparalleled craftsmanship.</p>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://wa.me/923121399449" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SOLO WEAR</h3>
+                    <p class="footer-text">Luxury fashion redefined for the discerning individual. Experience unparalleled quality and design.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
                     </div>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="shop.html">Shop</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="admin.html">Admin</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-col">
+                    <h4>Customer Service</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Shipping Information</a></li>
+                        <li><a href="contact.html">Size Guide</a></li>
+                        <li><a href="contact.html">Care Instructions</a></li>
+                        <li><a href="contact.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
                     <h4>Contact Info</h4>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-user"></i> Owner: Mohammed Abdullah</li>
+                    <ul class="footer-contact">
                         <li><i class="fas fa-phone"></i> +92 312 1399449</li>
-                        <li><i class="fas fa-user"></i> Developer: Ahmed Raza</li>
-                        <li><i class="fas fa-phone"></i> 03093238209</li>
                         <li><i class="fas fa-envelope"></i> info@solowear.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Luxury Fashion District, Karachi, Pakistan</li>
                     </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Policy</h4>
-                    <p class="policy-notice"><strong>No Returns / All Sales Final</strong></p>
-                    <p>Due to the premium nature of our products, all sales are final. We do not accept returns or exchanges unless the item arrives damaged or defective.</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Solo Wear. All rights reserved. | Luxury Fashion Pakistan</p>
+                <p>&copy; 2025 Solo Wear Luxury Fashion Brand. All rights reserved. | <span class="no-returns">No Returns / All Sales Final</span></p>
             </div>
         </div>
     </footer>
 
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
